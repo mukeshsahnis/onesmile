@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featuredPost = sortedPosts[0];
+const remainingPosts = sortedPosts.slice(1);
+---
+
+<Layout 
+  title="Oral Health Blog & Guides | One Smile Dental Care"
+  description="Stay informed about your oral health with expert dental advice, guides on dental implants, clear aligners, wisdom teeth, and pediatric dentistry from Dr. Radhika."
+>
+  <section class="py-20 bg-stone-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-950/40 via-stone-950 to-stone-950 opacity-90 z-0"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
+      <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Dental Health Resources</span>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mt-3 mb-6">Smile Wellness Blog</h1>
+      <p class="text-lg sm:text-xl text-stone-300 max-w-2xl mx-auto font-light">
+        Expert advice, step-by-step guides, and answers to your dental questions from Dr. Radhika and our team.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      {/* Featured Post */}
+      {featuredPost && (
+        <div class="mb-16">
+          <div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden p-6 sm:p-8 hover:shadow-md transition-shadow duration-300">
+            <div class="lg:col-span-7 aspect-video w-full rounded-2xl overflow-hidden bg-stone-100 relative">
+              <img 
+                src={featuredPost.data.heroImage} 
+                alt={featuredPost.data.title} 
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
+              />
+              <div class="absolute top-4 left-4 bg-teal-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                Featured Article
+              </div>
+            </div>
+            
+            <div class="lg:col-span-5 flex flex-col gap-4">
+              <div class="flex items-center gap-4 text-xs font-medium text-stone-400 uppercase tracking-wider">
+                <span>{featuredPost.data.category}</span>
+                <span>•</span>
+                <span>{new Date(featuredPost.data.pubDate).toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'})}</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 group-hover:text-teal-600 transition-colors leading-tight">
+                <a href={`/blog/${featuredPost.id}`}>
+                  {featuredPost.data.title}
+                </a>
+              </h2>
+              <p class="text-sm sm:text-base text-stone-600 leading-relaxed line-clamp-4">
+                {featuredPost.data.description}
+              </p>
+              <div class="flex items-center gap-3 mt-2">
+                <div class="w-10 h-10 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-sm">
+                  {featuredPost.data.author.charAt(0)}
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-sm font-bold text-stone-900">By {featuredPost.data.author}</span>
+                  <span class="text-xs text-stone-500">Lead Dentist & Writer</span>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a href={`/blog/${featuredPost.id}`} class="btn btn-primary text-white text-sm font-bold">
+                  Read Full Guide
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Remaining Posts Grid */}
+      {remainingPosts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {remainingPosts.map(post => (
+            <div class="group relative flex flex-col justify-between overflow-hidden bg-white rounded-2xl border border-stone-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-teal-500/20">
+              <div>
+                <div class="aspect-video w-full overflow-hidden bg-stone-100 relative">
+                  <img 
+                    src={post.data.heroImage} 
+                    alt={post.data.title} 
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-teal-400 border border-stone-850">
+                    {post.data.category}
+                  </div>
+                </div>
+                <div class="p-6">
+                  <span class="text-xs text-stone-400 font-semibold uppercase tracking-wider block mb-2">
+                    {new Date(post.data.pubDate).toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'})}
+                  </span>
+                  <h3 class="text-lg font-bold text-stone-900 mb-2 group-hover:text-teal-600 transition-colors line-clamp-2">
+                    <a href={`/blog/${post.id}`}>
+                      {post.data.title}
+                    </a>
+                  </h3>
+                  <p class="text-sm text-stone-600 leading-relaxed line-clamp-3">
+                    {post.data.description}
+                  </p>
+                </div>
+              </div>
+              
+              <div class="p-6 pt-0 border-t border-stone-100 mt-4 flex items-center justify-between">
+                <span class="text-xs font-bold text-stone-500">By {post.data.author}</span>
+                <a href={`/blog/${post.id}`} class="inline-flex items-center gap-1.5 text-xs font-bold text-teal-600 hover:text-teal-800 transition-colors group/link">
+                  Read article
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-200 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        sortedPosts.length === 0 && (
+          <div class="text-center py-20">
+            <p class="text-stone-500">No blog posts found.</p>
+          </div>
+        )
+      )}
+
+    </div>
+  </section>
+</Layout>

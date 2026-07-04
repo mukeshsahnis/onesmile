@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const services = await getCollection('services');
+const sortedServices = services.sort((a, b) => a.data.order - b.data.order);
+
+// ServiceList Schema for Local SEO
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "One Smile Dental Care",
+  "image": "https://onesmiledentalcare.com/clinic/treating-patient.jpg",
+  "url": "https://onesmiledentalcare.com/services",
+  "telephone": "+918400021200",
+  "email": "onesmile.dentalcare@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "One Smile Dental Care",
+    "addressLocality": "Lucknow",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "226010",
+    "addressCountry": "IN"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dental Services Offered",
+    "itemListElement": sortedServices.map((service, idx) => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": service.data.title,
+        "description": service.data.description
+      },
+      "position": idx + 1
+    }))
+  }
+};
+---
+
+<Layout 
+  title="Dental Services & Procedures | One Smile Dental Care"
+  description="Explore our full list of 14 premium dental services including Dental Implants, Root Canal Treatments, Clear Aligners, Teeth Whitening, and Gum Treatments."
+>
+  {/* JSON-LD Structured Data */}
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section class="py-20 bg-stone-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-950/40 via-stone-950 to-stone-950 opacity-90 z-0"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
+      <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Complete Oral Care</span>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mt-3 mb-6">Our Services</h1>
+      <p class="text-lg sm:text-xl text-stone-300 max-w-2xl mx-auto font-light">
+        Discover our 14 dental procedures designed to restore, protect, and enhance your oral health and smile.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sortedServices.map(service => (
+          <div class="group relative flex flex-col justify-between overflow-hidden bg-white rounded-2xl border border-stone-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-teal-500/20">
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-stone-100 relative">
+                <img 
+                  src={service.data.image} 
+                  alt={service.data.title} 
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div class="absolute top-4 right-4 bg-stone-900/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-teal-400 border border-stone-850">
+                  Step {service.data.order}
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-teal-600 transition-colors">
+                  {service.data.title}
+                </h3>
+                <p class="text-sm text-stone-600 leading-relaxed line-clamp-3 mb-4">
+                  {service.data.summary}
+                </p>
+                
+                {service.data.treatmentTime && (
+                  <div class="flex items-center gap-1.5 text-xs text-stone-500 font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Time: {service.data.treatmentTime}
+                  </div>
+                )}
+              </div>
+            </div>
+            
+            <div class="p-6 pt-0 border-t border-stone-100 mt-4">
+              <a href={`/services/${service.id}`} class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-800 transition-colors group/link">
+                View Full Treatment Guide
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

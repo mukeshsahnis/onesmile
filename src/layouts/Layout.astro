@@ -1,0 +1,288 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title = "One Smile Dental Care | Premium Dental Clinic & Implant Centre",
+  description = "Experience premium dental care at One Smile Dental Care. Providing world-class Dental Implants, Root Canal Treatments, Braces, Smile Makeovers, and Kids Dentistry with state-of-the-art technology.",
+  image = "/clinic/treating-patient.jpg",
+  canonicalURL = Astro.url.href,
+} = Astro.props;
+
+const navLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact Us", href: "/contact" }
+];
+
+const phone1 = "+91-8400021200";
+const phone2 = "+91-6394763460";
+const email = "onesmile.dentalcare@gmail.com";
+const addressLink = "https://www.google.com/maps?cid=11247058903890459605&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=US&source=embed";
+const whatsappNo = "+918400021200";
+const facebookLink = "https://www.facebook.com/profile.php?id=100069537376974";
+const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
+---
+
+<!doctype html>
+<html lang="en" data-theme="onesmile">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    {/* Primary Meta Tags */}
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url.origin).toString()} />
+
+    {/* Twitter */}
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url.origin).toString()} />
+
+    {/* Google Fonts */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    {/* View Transitions */}
+    <ClientRouter />
+  </head>
+  <body class="flex flex-col min-h-screen bg-stone-50 text-stone-900 selection:bg-teal-600 selection:text-white">
+    {/* Navigation */}
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-stone-50/90 border-b border-stone-200/80 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          {/* Logo Brand area */}
+          <a href="/" class="flex items-center gap-3 group focus:outline-none">
+            <img 
+              src="/logos/logo.png" 
+              alt="One Smile Dental Care Logo" 
+              class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+            <span class="sr-only">One Smile Dental Care</span>
+          </a>
+
+          {/* Desktop Nav */}
+          <nav class="hidden md:flex items-center gap-8">
+            {navLinks.map(link => (
+              <a 
+                href={link.href} 
+                class="text-sm font-semibold tracking-wide text-stone-700 hover:text-teal-600 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal-600 hover:after:w-full after:transition-all after:duration-300"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          {/* CTA & Mobile Toggle */}
+          <div class="flex items-center gap-4">
+            <a 
+              href="https://wa.me/918400021200" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="hidden sm:inline-flex btn btn-primary text-sm font-semibold transition-transform duration-300 hover:scale-105 active:scale-95 shadow-md shadow-teal-600/10 hover:shadow-teal-600/20"
+            >
+              Book Appointment
+            </a>
+
+            {/* Mobile menu dropdown using DaisyUI */}
+            <div class="dropdown dropdown-end md:hidden">
+              <button 
+                tabindex="0" 
+                class="btn btn-ghost btn-circle text-stone-700 hover:bg-stone-200/50" 
+                aria-label="Toggle Menu"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+              </button>
+              <ul 
+                tabindex="0" 
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-stone-50 border border-stone-200 rounded-box w-52 gap-2"
+              >
+                {navLinks.map(link => (
+                  <li>
+                    <a href={link.href} class="text-stone-700 font-medium hover:text-teal-600 py-2">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+                <div class="divider my-1"></div>
+                <li>
+                  <a 
+                    href="https://wa.me/918400021200" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="btn btn-primary btn-sm text-white w-full text-center"
+                  >
+                    WhatsApp Book
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {/* Main Content */}
+    <main class="flex-grow page-enter">
+      <slot />
+    </main>
+
+    {/* Footer */}
+    <footer class="bg-stone-900 text-stone-300 pt-16 pb-8 border-t border-stone-850">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Brand Col */}
+          <div class="flex flex-col gap-6">
+            <a href="/" class="flex items-center gap-3">
+              <img 
+                src="/logos/logo_backup.png" 
+                alt="One Smile Dental Care" 
+                class="h-12 w-auto object-contain brightness-0 invert"
+              />
+            </a>
+            <p class="text-sm text-stone-400 leading-relaxed">
+              Your home for advanced, gentle dental care. We specialize in implants, cosmetic smile design, and family dentistry in a comfortable, sterile environment.
+            </p>
+            <div class="flex gap-4">
+              <a 
+                href={facebookLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-2 bg-stone-800 hover:bg-teal-600 rounded-full text-stone-300 hover:text-white transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M9 8H7v3h2v9h3v-9h3.2l.3-3H12V6.3C12 5.5 12.3 5 13.5 5H15V2h-2.5C9.8 2 8 3.8 8 6.5V8z"/>
+                </svg>
+              </a>
+              <a 
+                href={instagramLink} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-2 bg-stone-800 hover:bg-teal-600 rounded-full text-stone-300 hover:text-white transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </a>
+              <a 
+                href={`https://wa.me/${whatsappNo.replace('+', '')}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="p-2 bg-stone-800 hover:bg-teal-600 rounded-full text-stone-300 hover:text-white transition-all duration-300"
+                aria-label="WhatsApp"
+              >
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.503 5.334 1.504 5.514 0 10.002-4.48 10.005-9.99.001-2.67-1.036-5.18-2.92-7.067C17.18 1.714 14.679.673 12.008.673c-5.517 0-10.005 4.48-10.008 9.991-.001 2.083.547 4.11 1.585 5.897L2.592 21.4l5.055-1.328-.1-.082z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 class="text-white text-base font-semibold uppercase tracking-wider mb-6">Quick Links</h3>
+            <ul class="flex flex-col gap-4 text-sm">
+              <li><a href="/about" class="hover:text-teal-400 transition-colors">About Our Clinic</a></li>
+              <li><a href="/services" class="hover:text-teal-400 transition-colors">Dental Services</a></li>
+              <li><a href="/gallery" class="hover:text-teal-400 transition-colors">Clinic Gallery</a></li>
+              <li><a href="/blog" class="hover:text-teal-400 transition-colors">Dental Blog & Tips</a></li>
+              <li><a href="/contact" class="hover:text-teal-400 transition-colors">Get In Touch</a></li>
+            </ul>
+          </div>
+
+          {/* Working Hours */}
+          <div>
+            <h3 class="text-white text-base font-semibold uppercase tracking-wider mb-6">Working Hours</h3>
+            <ul class="flex flex-col gap-3 text-sm text-stone-400">
+              <li class="flex justify-between border-b border-stone-800 pb-2">
+                <span>Monday</span>
+                <span class="text-red-400 font-semibold">Closed</span>
+              </li>
+              <li class="flex justify-between border-b border-stone-800 pb-2">
+                <span>Tuesday - Saturday</span>
+                <div class="text-right">
+                  <div>10:00AM - 02:00PM</div>
+                  <div>05:00PM - 08:00PM</div>
+                </div>
+              </li>
+              <li class="flex justify-between pb-2">
+                <span>Sunday</span>
+                <span>10:00AM - 01:00PM</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Details */}
+          <div>
+            <h3 class="text-white text-base font-semibold uppercase tracking-wider mb-6">Contact Us</h3>
+            <ul class="flex flex-col gap-4 text-sm text-stone-400">
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <div class="flex flex-col">
+                  <a href={`tel:${phone1.replace(/-/g, '')}`} class="hover:text-white transition-colors">{phone1}</a>
+                  <a href={`tel:${phone2.replace(/-/g, '')}`} class="hover:text-white transition-colors">{phone2}</a>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href={`mailto:${email}`} class="hover:text-white transition-colors break-all">{email}</a>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <a href={addressLink} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors leading-relaxed">
+                  One Smile Dental Care<br />
+                  <span class="text-xs text-teal-400 hover:underline">View on Google Maps</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="divider border-stone-850"></div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-stone-500">
+          <p>© {new Date().getFullYear()} One Smile Dental Care. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a href="/sitemap-index.xml" class="hover:text-stone-300">Sitemap</a>
+            <a href="/rss.xml" class="hover:text-stone-300">RSS Feed</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

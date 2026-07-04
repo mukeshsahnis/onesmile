@@ -1,0 +1,18 @@
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
+import type { APIContext } from 'astro';
+
+export async function GET(context: APIContext) {
+  const blog = await getCollection('blog');
+  return rss({
+    title: 'One Smile Dental Care Blog',
+    description: 'Expert dental tips, guides, and news from Dr. Radhika and the team at One Smile Dental Care.',
+    site: context.site || 'https://onesmiledentalcare.com/',
+    items: blog.map((post) => ({
+      title: post.data.title,
+      pubDate: post.data.pubDate,
+      description: post.data.description,
+      link: `/blog/${post.id}/`,
+    })),
+  });
+}

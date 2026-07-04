@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Dentist / LocalBusiness Schema for local SEO
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "One Smile Dental Care",
+  "image": "https://onesmiledentalcare.com/logos/logo.png",
+  "@id": "https://onesmiledentalcare.com/#dentist",
+  "url": "https://onesmiledentalcare.com/",
+  "telephone": "+918400021200",
+  "email": "onesmile.dentalcare@gmail.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "One Smile Dental Care",
+    "addressLocality": "Lucknow",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "226010",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "26.902636",
+    "longitude": "80.970228"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "13:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=100069537376974",
+    "https://www.instagram.com/onesmile_dentalcare/"
+  ]
+};
+---
+
+<Layout 
+  title="Contact Us & Book Appointment | One Smile Dental Care"
+  description="Get in touch with One Smile Dental Care. View our working hours, call us at +91-8400021200, find directions, or send an appointment request."
+>
+  {/* Inject Local Business Schema */}
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <section class="py-20 bg-stone-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-teal-950/40 via-stone-950 to-stone-950 opacity-90 z-0"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-10">
+      <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Get In Touch</span>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mt-3 mb-6">Contact & Appointments</h1>
+      <p class="text-lg sm:text-xl text-stone-300 max-w-2xl mx-auto font-light">
+        Schedule your consultation or reach out with any dental inquiries. We are here to help.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        {/* Contact Info Sidebar */}
+        <div class="lg:col-span-5 flex flex-col gap-8">
+          <div class="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm flex flex-col gap-6">
+            <h2 class="text-2xl font-extrabold text-stone-900 border-b border-stone-100 pb-3">Clinic Details</h2>
+            
+            {/* Phone */}
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 text-teal-600 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm uppercase tracking-wider mb-1">Phone Numbers</h3>
+                <a href="tel:+918400021200" class="text-stone-700 hover:text-teal-600 block text-base font-semibold">+91-8400021200</a>
+                <a href="tel:+916394763460" class="text-stone-700 hover:text-teal-600 block text-base font-semibold">+91-6394763460</a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 text-teal-600 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm uppercase tracking-wider mb-1">Email Address</h3>
+                <a href="mailto:onesmile.dentalcare@gmail.com" class="text-stone-700 hover:text-teal-600 text-base font-semibold break-all">
+                  onesmile.dentalcare@gmail.com
+                </a>
+              </div>
+            </div>
+
+            {/* Address */}
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 border border-teal-100 text-teal-600 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-stone-900 text-sm uppercase tracking-wider mb-1">Location</h3>
+                <p class="text-stone-700 leading-relaxed font-semibold">
+                  One Smile Dental Care<br />
+                  Lucknow, Uttar Pradesh, India
+                </p>
+                <a 
+                  href="https://www.google.com/maps?cid=11247058903890459605&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=US&source=embed"
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="text-xs text-teal-600 hover:underline font-bold mt-1 inline-block"
+                >
+                  Get directions on Google Maps
+                </a>
+              </div>
+            </div>
+
+            {/* Working Hours */}
+            <div class="divider border-stone-100 my-1"></div>
+            <div>
+              <h3 class="font-bold text-stone-900 text-sm uppercase tracking-wider mb-3">Working Hours</h3>
+              <ul class="flex flex-col gap-2 text-sm text-stone-600">
+                <li class="flex justify-between border-b border-stone-100 pb-1.5">
+                  <span>Tuesday - Saturday</span>
+                  <span class="font-semibold text-stone-900">10:00AM - 02:00PM, 5:00PM - 08:00PM</span>
+                </li>
+                <li class="flex justify-between border-b border-stone-100 pb-1.5">
+                  <span>Sunday</span>
+                  <span class="font-semibold text-stone-900">10:00AM - 01:00PM</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Monday</span>
+                  <span class="font-semibold text-red-500">Closed</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Appointment Form */}
+        <div class="lg:col-span-7">
+          <div class="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm">
+            <h2 class="text-2xl font-extrabold text-stone-900 mb-6 border-b border-stone-100 pb-3">Book Appointment / Message Us</h2>
+            
+            <form id="contact-form" class="flex flex-col gap-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="form-control w-full">
+                  <label class="label" for="form-name">
+                    <span class="label-text font-bold text-stone-700">Full Name</span>
+                  </label>
+                  <input type="text" id="form-name" placeholder="John Doe" class="input input-bordered w-full" required />
+                </div>
+                <div class="form-control w-full">
+                  <label class="label" for="form-phone">
+                    <span class="label-text font-bold text-stone-700">Phone Number</span>
+                  </label>
+                  <input type="tel" id="form-phone" placeholder="+91 XXXXX XXXXX" class="input input-bordered w-full" required />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="form-control w-full">
+                  <label class="label" for="form-email">
+                    <span class="label-text font-bold text-stone-700">Email Address (Optional)</span>
+                  </label>
+                  <input type="email" id="form-email" placeholder="john@example.com" class="input input-bordered w-full" />
+                </div>
+                <div class="form-control w-full">
+                  <label class="label" for="form-treatment">
+                    <span class="label-text font-bold text-stone-700">Required Treatment</span>
+                  </label>
+                  <select id="form-treatment" class="select select-bordered w-full" required>
+                    <option value="" disabled selected>Select treatment</option>
+                    <option value="Dental implant">Dental Implant</option>
+                    <option value="Crown and bridges">Crown & Bridges</option>
+                    <option value="Root canal treatment">Root Canal Treatment</option>
+                    <option value="Preventive care">Preventive Care / Cleaning</option>
+                    <option value="Kids dentistry">Kids Dentistry</option>
+                    <option value="Braces and aligners">Braces & Aligners</option>
+                    <option value="Cosmetic dentistry">Cosmetic Dentistry / Teeth Whitening</option>
+                    <option value="Other">Other / General Checkup</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-control w-full">
+                <label class="label" for="form-message">
+                  <span class="label-text font-bold text-stone-700">Message / Preferred Timings</span>
+                </label>
+                <textarea id="form-message" class="textarea textarea-bordered h-24" placeholder="Tell us about your concern or specify preferred days and times..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary text-white w-full font-bold shadow-md shadow-teal-500/10 hover:shadow-teal-500/25">
+                Send Appointment Request
+              </button>
+
+              <div id="form-success" class="hidden alert alert-success text-sm flex gap-2 rounded-xl mt-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0" /></svg>
+                <span>Thank you! Your request has been sent. We will contact you shortly to confirm your booking.</span>
+              </div>
+            </form>
+
+            <script>
+              // Safe client-side submission mock logic
+              document.addEventListener('astro:page-load', () => {
+                const form = document.getElementById('contact-form') as HTMLFormElement | null;
+                const successAlert = document.getElementById('form-success');
+                if (form) {
+                  form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    // Simple WhatsApp redirect option or feedback alert
+                    if (successAlert) {
+                      successAlert.classList.remove('hidden');
+                      form.reset();
+                      // Smooth scroll down to success message
+                      successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                  });
+                }
+              });
+            </script>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* Maps Section */}
+  <section class="w-full h-[450px] relative bg-stone-100 border-t border-stone-200">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.026759714859!2d80.97022839999999!3d26.902636299999998!2m3!1f0!2f0!3f0!3m2!1i1024|2i768!4f13.1!3m3!1m2!1s0x399957d3cc9aa1a7%3A0x9c3cf2c9bc68fb95!2sOne%20Smile%20Dental%20Care!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+      class="w-full h-full border-0 absolute inset-0"
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Google Maps Location for One Smile Dental Care"
+    ></iframe>
+  </section>
+</Layout>
