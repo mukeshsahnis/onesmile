@@ -85,3 +85,6 @@ Represents article guides written by clinical authors.
 ## 📄 License
 
 This project is proprietary and built specifically for One Smile Dental Care. All assets, images, and content rights are reserved.
+
+---
+*Last deployed: July 2026*
