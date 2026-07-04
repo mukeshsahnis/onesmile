@@ -81,28 +81,6 @@ Represents article guides written by clinical authors.
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions to improve One Smile Dental Care! To contribute:
-
-1. **Create a Branch**: Create a descriptive branch name (e.g., `feature/add-contact-tests` or `fix/nav-spacing`).
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-2. **Commit Changes**: Use clean, descriptive commit messages.
-   ```bash
-   git commit -m "Add new blog post about teeth whitening safety"
-   ```
-3. **Verify Build**: Ensure the project compiles cleanly without TypeScript or Astro errors:
-   ```bash
-   npm run build
-   ```
-4. **Push & Open a Pull Request**: Push your branch and request a review.
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
----
 
 ## 📄 License
 
