@@ -16,7 +16,7 @@ const {
   canonicalURL = Astro.url.href,
 } = Astro.props;
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const navLinks = [
   { name: "About Us", href: `${base}about` },
   { name: "Services", href: `${base}services` },
@@ -77,9 +77,9 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           {/* Logo Brand area */}
-          <a href={import.meta.env.BASE_URL} class="flex items-center gap-3 group focus:outline-none">
+          <a href={base} class="flex items-center gap-3 group focus:outline-none">
             <img 
-              src={`${import.meta.env.BASE_URL}logos/logo.png`} 
+              src={`${base}logos/logo.png`} 
               alt="One Smile Dental Care Logo" 
               class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -160,9 +160,9 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Col */}
           <div class="flex flex-col gap-6">
-            <a href={import.meta.env.BASE_URL} class="flex items-center gap-3">
+            <a href={base} class="flex items-center gap-3">
               <img 
-                src={`${import.meta.env.BASE_URL}logos/logo_backup.png`} 
+                src={`${base}logos/logo_backup.png`} 
                 alt="One Smile Dental Care" 
                 class="h-12 w-auto object-contain brightness-0 invert"
               />

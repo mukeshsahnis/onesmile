@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const allServices = await getCollection('services');
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const featuredServices = allServices
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 6);
@@ -18,7 +19,7 @@ const patientPhotos = [
   "/patients/patient8.jpg",
   "/patients/patient9.jpg",
   "/patients/patient10.jpg",
-].map(path => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`);
+].map(path => `${base}${path.replace(/^\//, '')}`);
 
 const googleReviews = [
   {
@@ -65,7 +66,7 @@ const googleReviews = [
     {/* Full-bleed dominant background image */}
     <div class="absolute inset-0 z-0">
       <img 
-        src={`${import.meta.env.BASE_URL}banners/banner.jpg`} 
+        src={`${base}banners/banner.jpg`} 
         alt="Smiling patient showing beautiful white teeth" 
         class="w-full h-full object-cover object-center opacity-40 scale-105 animate-[zoomOut_20s_ease-out_forwards]"
       />
@@ -87,7 +88,7 @@ const googleReviews = [
         <a href="https://wa.me/918400021200" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg text-base font-bold shadow-lg shadow-teal-500/20 hover:scale-105 transition-transform duration-300">
           Book Appointment
         </a>
-        <a href={`${import.meta.env.BASE_URL}services`} class="btn btn-outline btn-lg text-white hover:bg-white hover:text-stone-950 border-white/60 hover:border-white transition-all duration-300">
+        <a href={`${base}services`} class="btn btn-outline btn-lg text-white hover:bg-white hover:text-stone-950 border-white/60 hover:border-white transition-all duration-300">
           Explore Services
         </a>
       </div>
@@ -110,7 +111,7 @@ const googleReviews = [
             <div>
               <div class="aspect-video w-full overflow-hidden bg-stone-100">
                 <img 
-                  src={service.data.image.startsWith('/') ? `${import.meta.env.BASE_URL}${service.data.image.slice(1)}` : service.data.image} 
+                  src={service.data.image.startsWith('/') ? `${base}${service.data.image.slice(1)}` : service.data.image} 
                   alt={service.data.title} 
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
@@ -126,7 +127,7 @@ const googleReviews = [
               </div>
             </div>
             <div class="p-6 pt-0">
-              <a href={`${import.meta.env.BASE_URL}services/${service.id}`} class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-800 transition-colors group/link">
+              <a href={`${base}services/${service.id}`} class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-800 transition-colors group/link">
                 Learn treatment details
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -138,7 +139,7 @@ const googleReviews = [
       </div>
 
       <div class="text-center mt-12">
-        <a href={`${import.meta.env.BASE_URL}services`} class="btn btn-primary btn-outline font-semibold">
+        <a href={`${base}services`} class="btn btn-primary btn-outline font-semibold">
           View All 14 Services
         </a>
       </div>
@@ -152,7 +153,7 @@ const googleReviews = [
         <div class="lg:col-span-5 relative">
           <div class="aspect-[3/4] w-full rounded-2xl overflow-hidden bg-stone-200 shadow-2xl relative">
             <img 
-              src={`${import.meta.env.BASE_URL}doctors/doctor-radhika-1.jpg`} 
+              src={`${base}doctors/doctor-radhika-1.jpg`} 
               alt="Dr. Radhika, lead dentist at One Smile Dental Care" 
               class="w-full h-full object-cover"
               loading="lazy"
@@ -191,7 +192,7 @@ const googleReviews = [
             </div>
           </div>
           <div class="mt-4">
-            <a href={`${import.meta.env.BASE_URL}about`} class="btn btn-primary text-white">
+            <a href={`${base}about`} class="btn btn-primary text-white">
               Learn About Dr. Radhika
             </a>
           </div>
