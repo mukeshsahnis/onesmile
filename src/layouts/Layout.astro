@@ -16,12 +16,13 @@ const {
   canonicalURL = Astro.url.href,
 } = Astro.props;
 
+const base = import.meta.env.BASE_URL;
 const navLinks = [
-  { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact Us", href: "/contact" }
+  { name: "About Us", href: `${base}about` },
+  { name: "Services", href: `${base}services` },
+  { name: "Gallery", href: `${base}gallery` },
+  { name: "Blog", href: `${base}blog` },
+  { name: "Contact Us", href: `${base}contact` }
 ];
 
 const phone1 = "+91-8400021200";
@@ -76,7 +77,7 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           {/* Logo Brand area */}
-          <a href="/" class="flex items-center gap-3 group focus:outline-none">
+          <a href={import.meta.env.BASE_URL} class="flex items-center gap-3 group focus:outline-none">
             <img 
               src="/logos/logo.png" 
               alt="One Smile Dental Care Logo" 
@@ -159,7 +160,7 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Col */}
           <div class="flex flex-col gap-6">
-            <a href="/" class="flex items-center gap-3">
+            <a href={import.meta.env.BASE_URL} class="flex items-center gap-3">
               <img 
                 src="/logos/logo_backup.png" 
                 alt="One Smile Dental Care" 
@@ -210,11 +211,11 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
           <div>
             <h3 class="text-white text-base font-semibold uppercase tracking-wider mb-6">Quick Links</h3>
             <ul class="flex flex-col gap-4 text-sm">
-              <li><a href="/about" class="hover:text-teal-400 transition-colors">About Our Clinic</a></li>
-              <li><a href="/services" class="hover:text-teal-400 transition-colors">Dental Services</a></li>
-              <li><a href="/gallery" class="hover:text-teal-400 transition-colors">Clinic Gallery</a></li>
-              <li><a href="/blog" class="hover:text-teal-400 transition-colors">Dental Blog & Tips</a></li>
-              <li><a href="/contact" class="hover:text-teal-400 transition-colors">Get In Touch</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}about`} class="hover:text-teal-400 transition-colors">About Our Clinic</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}services`} class="hover:text-teal-400 transition-colors">Dental Services</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}gallery`} class="hover:text-teal-400 transition-colors">Clinic Gallery</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}blog`} class="hover:text-teal-400 transition-colors">Dental Blog & Tips</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}contact`} class="hover:text-teal-400 transition-colors">Get In Touch</a></li>
             </ul>
           </div>
 
