@@ -39,8 +39,8 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
     <meta name="generator" content={Astro.generator} />
 
     {/* Primary Meta Tags */}
@@ -79,7 +79,7 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
           {/* Logo Brand area */}
           <a href={import.meta.env.BASE_URL} class="flex items-center gap-3 group focus:outline-none">
             <img 
-              src="/logos/logo.png" 
+              src={`${import.meta.env.BASE_URL}logos/logo.png`} 
               alt="One Smile Dental Care Logo" 
               class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -162,7 +162,7 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
           <div class="flex flex-col gap-6">
             <a href={import.meta.env.BASE_URL} class="flex items-center gap-3">
               <img 
-                src="/logos/logo_backup.png" 
+                src={`${import.meta.env.BASE_URL}logos/logo_backup.png`} 
                 alt="One Smile Dental Care" 
                 class="h-12 w-auto object-contain brightness-0 invert"
               />

@@ -76,7 +76,7 @@ const faqSchema = {
           {/* Main Visual Anchor */}
           <div class="aspect-video w-full rounded-2xl overflow-hidden bg-stone-200 shadow-lg border border-stone-200">
             <img 
-              src={entry.data.image} 
+              src={entry.data.image.startsWith('/') ? `${import.meta.env.BASE_URL}${entry.data.image.slice(1)}` : entry.data.image} 
               alt={`Clinical details for ${entry.data.title}`} 
               class="w-full h-full object-cover"
             />
@@ -177,7 +177,7 @@ const faqSchema = {
                   <a href={`${import.meta.env.BASE_URL}services/${relService.id}`} class="group flex items-center gap-3 focus:outline-none">
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0">
                       <img 
-                        src={relService.data.image} 
+                        src={relService.data.image.startsWith('/') ? `${import.meta.env.BASE_URL}${relService.data.image.slice(1)}` : relService.data.image} 
                         alt={relService.data.title} 
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />

@@ -8,7 +8,7 @@ const clinicImages = [
   { src: "/clinic/xray.jpg", title: "Digital X-Ray Diagnoses", category: "Technology" },
   { src: "/clinic/dental.jpg", title: "Dental Operatory", category: "Facility" },
   { src: "/clinic/tools.jpg", title: "Endodontic Rotary Instruments", category: "Equipment" }
-];
+].map(img => ({ ...img, src: `${import.meta.env.BASE_URL}${img.src.replace(/^\//, '')}` }));
 
 const patientPhotos = [
   "/patients/patient1.jpg",
@@ -21,7 +21,7 @@ const patientPhotos = [
   "/patients/patient8.jpg",
   "/patients/patient9.jpg",
   "/patients/patient10.jpg"
-];
+].map(path => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`);
 ---
 
 <Layout 
