@@ -159,11 +159,11 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Col */}
           <div class="flex flex-col gap-6">
-            <a href={base} class="flex items-center gap-3">
+            <a href={base} class="flex items-center gap-3 group focus:outline-none">
               <img 
-                src={`${base}logos/logo_backup.png`} 
+                src={`${base}logos/logo.png`} 
                 alt="One Smile Dental Care" 
-                class="h-12 w-auto object-contain brightness-0 invert"
+                class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </a>
             <p class="text-sm text-stone-400 leading-relaxed">
