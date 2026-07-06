@@ -1,7 +1,7 @@
 ---
 title: "Gentle Tooth Extractions"
 description: "Experience safe, pain-free tooth extractions and wisdom teeth removal at One Smile Dental Care. Providing maximum comfort and careful post-op guidance."
-image: "/clinic/tools.jpg"
+image: "/clinic/extraction.jpg"
 summary: "Safe removal of severely damaged, decayed, or crowded teeth, including wisdom teeth. We prioritize your comfort and quick healing."
 order: 7
 benefits:

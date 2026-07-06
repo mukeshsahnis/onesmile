@@ -1,7 +1,7 @@
 ---
 title: "Maxillofacial Trauma & Fractures"
 description: "Receive emergency surgical care for facial trauma, jaw fractures, and dental lacerations at One Smile Dental Care. Managed by experienced maxillofacial surgeons."
-image: "/clinic/xray.jpg"
+image: "/clinic/maxillofacial-trauma.jpg"
 summary: "Specialized emergency care for facial injuries, jaw fractures, and severe dental trauma, restoring facial structure and function."
 order: 11
 benefits:

@@ -1,7 +1,7 @@
 ---
 title: "Dental Crowns & Bridges"
 description: "Restore damaged or missing teeth with custom-crafted dental crowns and bridges at One Smile Dental Care. Made from premium, long-lasting porcelain and ceramic."
-image: "/clinic/tools.jpg"
+image: "/clinic/crown-and-bridges.jpg"
 summary: "Protect cracked teeth and fill gaps in your smile. Our custom-designed crowns and bridges restore shape, size, and strength to your teeth."
 order: 2
 benefits:

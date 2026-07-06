@@ -275,7 +275,7 @@ const googleReviews = [
   </section>
 
   {/* SECTION 5: GOOGLE REVIEWS CAROUSEL - Interactive User Container */}
-  <section class="py-24 bg-stone-150 border-b border-stone-200">
+  <section class="py-24 bg-teal-50 border-b border-teal-100/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-4">Verified Google Reviews</h2>
@@ -285,7 +285,22 @@ const googleReviews = [
       </div>
 
       <div class="relative w-full max-w-3xl mx-auto">
-        <div class="carousel w-full rounded-2xl bg-white border border-stone-200 shadow-lg p-8 sm:p-12 min-h-[300px] flex items-center justify-center">
+        
+        {/* Reviews Carousel Prev Button */}
+        <button id="reviews-prev" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 btn btn-circle btn-ghost text-stone-400 hover:text-teal-600 transition-all duration-300 z-10" aria-label="Previous Review">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* Reviews Carousel Next Button */}
+        <button id="reviews-next" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 btn btn-circle btn-ghost text-stone-400 hover:text-teal-600 transition-all duration-300 z-10" aria-label="Next Review">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <div id="reviews-carousel" class="carousel w-full rounded-2xl bg-teal-100/30 border border-teal-200/50 shadow-lg p-8 sm:p-12 min-h-[300px] flex items-center justify-center scroll-smooth">
           {googleReviews.map((review, idx) => (
             <div id={`review-${idx}`} class="carousel-item relative w-full flex flex-col justify-center items-center text-center gap-6">
               <div class="flex items-center gap-4">
@@ -309,17 +324,133 @@ const googleReviews = [
               </blockquote>
               
               <span class="text-xs text-stone-400 font-medium uppercase tracking-wider">{review.date} • Verified Google Review</span>
-
-              {/* Slider Controls */}
-              <div class="absolute flex justify-between transform -translate-y-1/2 left-0 right-0 top-1/2">
-                <a href={`#review-${idx === 0 ? googleReviews.length - 1 : idx - 1}`} class="btn btn-ghost btn-circle text-stone-400 hover:text-teal-600">❮</a>
-                <a href={`#review-${idx === googleReviews.length - 1 ? 0 : idx + 1}`} class="btn btn-ghost btn-circle text-stone-400 hover:text-teal-600">❯</a>
-              </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </div>    {/* Client side navigation handling for both carousels */}
+    <script>
+      document.addEventListener('astro:page-load', () => {
+        // --- Transformation Carousel ---
+        const transPrev = document.getElementById('carousel-prev');
+        const transNext = document.getElementById('carousel-next');
+        const transTrack = document.getElementById('transformation-carousel');
+        
+        let transInterval: any;
+        
+        function startTransAutoSlide() {
+          stopTransAutoSlide();
+          transInterval = setInterval(() => {
+            if (!transTrack) return;
+            const itemWidth = transTrack.firstElementChild?.clientWidth || 300;
+            const gap = 24;
+            const maxScroll = transTrack.scrollWidth - transTrack.clientWidth;
+            
+            if (transTrack.scrollLeft >= maxScroll - 10) {
+              transTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              transTrack.scrollBy({ left: itemWidth + gap, behavior: 'smooth' });
+            }
+          }, 4000);
+        }
+        
+        function stopTransAutoSlide() {
+          if (transInterval) clearInterval(transInterval);
+        }
+        
+        if (transPrev && transNext && transTrack) {
+          transPrev.addEventListener('click', () => {
+            const itemWidth = transTrack.firstElementChild?.clientWidth || 300;
+            const gap = 24;
+            const maxScroll = transTrack.scrollWidth - transTrack.clientWidth;
+            
+            if (transTrack.scrollLeft <= 10) {
+              transTrack.scrollTo({ left: maxScroll, behavior: 'smooth' });
+            } else {
+              transTrack.scrollBy({ left: -(itemWidth + 24), behavior: 'smooth' });
+            }
+            startTransAutoSlide();
+          });
+          
+          transNext.addEventListener('click', () => {
+            const itemWidth = transTrack.firstElementChild?.clientWidth || 300;
+            const gap = 24;
+            const maxScroll = transTrack.scrollWidth - transTrack.clientWidth;
+            
+            if (transTrack.scrollLeft >= maxScroll - 10) {
+              transTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              transTrack.scrollBy({ left: itemWidth + gap, behavior: 'smooth' });
+            }
+            startTransAutoSlide();
+          });
+          
+          // Pause on hover
+          transTrack.addEventListener('mouseenter', stopTransAutoSlide);
+          transTrack.addEventListener('mouseleave', startTransAutoSlide);
+          
+          startTransAutoSlide();
+        }
+
+        // --- Reviews Carousel ---
+        const revPrev = document.getElementById('reviews-prev');
+        const revNext = document.getElementById('reviews-next');
+        const revTrack = document.getElementById('reviews-carousel');
+        
+        let revInterval: any;
+        
+        function startRevAutoSlide() {
+          stopRevAutoSlide();
+          revInterval = setInterval(() => {
+            if (!revTrack) return;
+            const itemWidth = revTrack.clientWidth;
+            const maxScroll = revTrack.scrollWidth - revTrack.clientWidth;
+            
+            if (revTrack.scrollLeft >= maxScroll - 10) {
+              revTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              revTrack.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            }
+          }, 5000);
+        }
+        
+        function stopRevAutoSlide() {
+          if (revInterval) clearInterval(revInterval);
+        }
+        
+        if (revPrev && revNext && revTrack) {
+          revPrev.addEventListener('click', () => {
+            const itemWidth = revTrack.clientWidth;
+            const maxScroll = revTrack.scrollWidth - revTrack.clientWidth;
+            
+            if (revTrack.scrollLeft <= 10) {
+              revTrack.scrollTo({ left: maxScroll, behavior: 'smooth' });
+            } else {
+              revTrack.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+            }
+            startRevAutoSlide();
+          });
+          
+          revNext.addEventListener('click', () => {
+            const itemWidth = revTrack.clientWidth;
+            const maxScroll = revTrack.scrollWidth - revTrack.clientWidth;
+            
+            if (revTrack.scrollLeft >= maxScroll - 10) {
+              revTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+              revTrack.scrollBy({ left: itemWidth, behavior: 'smooth' });
+            }
+            startRevAutoSlide();
+          });
+          
+          // Pause on hover
+          revTrack.addEventListener('mouseenter', stopRevAutoSlide);
+          revTrack.addEventListener('mouseleave', startRevAutoSlide);
+          
+          startRevAutoSlide();
+        }
+      });
+    </script>
   </section>
 
   {/* SECTION 6: CONTACT & MAP - One Job Per Section */}
