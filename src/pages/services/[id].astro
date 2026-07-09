@@ -22,7 +22,7 @@ const relatedServices = await Promise.all(
 
 // Fetch blog posts that relate to this service
 const allBlogPosts = await getCollection('blog');
-const relatedBlogPosts = allBlogPosts.filter(post => 
+const relatedBlogPosts = allBlogPosts.filter(post =>
   (post.data.relatedServices || []).includes(entry.id)
 );
 
@@ -42,7 +42,7 @@ const faqSchema = {
 };
 ---
 
-<Layout 
+<Layout
   title={`${entry.data.title} | One Smile Dental Care`}
   description={entry.data.description}
   image={entry.data.image}
@@ -79,32 +79,64 @@ const faqSchema = {
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
+
         {/* Main Content Area */}
         <div class="lg:col-span-8 flex flex-col gap-10">
-          
+
           {/* Main Visual Anchor */}
           <div class="aspect-video w-full rounded-2xl overflow-hidden bg-stone-200 shadow-lg border border-stone-200">
-            <img 
-              src={entry.data.image.startsWith('/') ? `${base}${entry.data.image.slice(1)}` : entry.data.image} 
-              alt={`Clinical details for ${entry.data.title}`} 
+            <img
+              src={entry.data.image.startsWith('/') ? `${base}${entry.data.image.slice(1)}` : entry.data.image}
+              alt={`Clinical details for ${entry.data.title}`}
               class="w-full h-full object-cover"
             />
           </div>
 
-          {/* Markdown Content */}
-          <div class="prose prose-stone max-w-none prose-headings:text-stone-900 prose-p:text-stone-700 prose-strong:text-stone-900 leading-relaxed">
-            <Content />
-          </div>
+          {/* Quick summary first, so a service page does not feel too heavy */}
+          <section class="bg-white border border-stone-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-widest text-teal-600">Quick Summary</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 mt-3 mb-3">What this treatment helps with</h2>
+            <p class="text-base sm:text-lg text-stone-600 leading-relaxed">{entry.data.summary}</p>
+            {entry.data.benefits && entry.data.benefits.length > 0 && (
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
+                {entry.data.benefits.slice(0, 4).map(benefit => (
+                  <div class="flex items-start gap-2.5 text-sm text-stone-700 bg-stone-50 border border-stone-100 rounded-xl p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+
+          {/* Detailed treatment information is available on demand */}
+          <details class="collapse collapse-arrow bg-white border border-stone-200 rounded-2xl shadow-sm">
+            <summary class="collapse-title text-xl font-bold text-stone-900 pr-12">
+              Read detailed treatment information
+            </summary>
+            <div class="collapse-content">
+              <div class="prose prose-stone max-w-none prose-headings:text-stone-900 prose-p:text-stone-700 prose-strong:text-stone-900 leading-relaxed pt-2">
+                <Content />
+              </div>
+            </div>
+          </details>
 
           {/* FAQs section */}
           {entry.data.faqs && entry.data.faqs.length > 0 && (
             <div class="border-t border-stone-200 pt-10">
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 mb-6">Frequently Asked Questions</h2>
+              <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-widest text-teal-600">FAQs</span>
+                  <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 mt-2">Frequently Asked Questions</h2>
+                </div>
+                <a href={`${base}blog`} class="text-sm font-semibold text-teal-700 hover:text-teal-900">Read related blogs</a>
+              </div>
               <div class="flex flex-col gap-3">
-                {entry.data.faqs.map((faq, idx) => (
+                {entry.data.faqs.map((faq) => (
                   <div class="collapse collapse-plus bg-white border border-stone-200 rounded-xl">
-                    <input type="radio" name="faq-accordion" checked={idx === 0 ? "checked" : undefined} /> 
+                    <input type="radio" name="faq-accordion" />
                     <div class="collapse-title text-base font-bold text-stone-900 pr-12">
                       {faq.question}
                     </div>
@@ -121,7 +153,7 @@ const faqSchema = {
 
         {/* Sidebar Info Area */}
         <div class="lg:col-span-4 flex flex-col gap-8">
-          
+
           {/* Treatment Benefits */}
           {entry.data.benefits && entry.data.benefits.length > 0 && (
             <div class="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
@@ -148,10 +180,10 @@ const faqSchema = {
                 <span class="text-base font-bold text-stone-100">{entry.data.treatmentTime}</span>
               </div>
               <div class="divider border-stone-800 my-1"></div>
-              <a 
+              <a
                 href={`https://wa.me/918400021200?text=Hello%20One%20Smile%20Dental%20Care,%20I%20am%20interested%20in%20learning%20more%20about%20${encodeURIComponent(entry.data.title)}`}
-                target="_blank" 
-                rel="noopener noreferrer" 
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary text-white w-full text-center"
               >
                 Inquire via WhatsApp
@@ -186,9 +218,9 @@ const faqSchema = {
                 {relatedServices.map(relService => (
                   <a href={`${base}services/${relService.id}`} class="group flex items-center gap-3 focus:outline-none">
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0">
-                      <img 
-                        src={relService.data.image.startsWith('/') ? `${base}${relService.data.image.slice(1)}` : relService.data.image} 
-                        alt={relService.data.title} 
+                      <img
+                        src={relService.data.image.startsWith('/') ? `${base}${relService.data.image.slice(1)}` : relService.data.image}
+                        alt={relService.data.title}
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>

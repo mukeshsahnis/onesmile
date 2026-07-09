@@ -3,11 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const allServices = await getCollection('services');
+const sortedServices = allServices.sort((a, b) => a.data.order - b.data.order);
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const featuredServices = allServices
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 6);
-
 const patientPhotos = [
   "/patients/patient1.jpg",
   "/patients/patient2.jpg",
@@ -65,9 +62,9 @@ const googleReviews = [
   <section class="relative min-h-[90vh] flex items-end justify-center text-white overflow-hidden bg-stone-950 pb-6 sm:pb-10">
     {/* Full-bleed dominant background image */}
     <div class="absolute inset-0 z-0">
-      <img 
-        src={`${base}banners/banner.jpg`} 
-        alt="Smiling patient showing beautiful white teeth" 
+      <img
+        src={`${base}banners/banner.jpg`}
+        alt="Smiling patient showing beautiful white teeth"
         class="w-full h-full object-cover object-center opacity-70 scale-105 animate-[zoomOut_20s_ease-out_forwards]"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/40 to-stone-950/20 z-10"></div>
@@ -91,66 +88,15 @@ const googleReviews = [
     </div>
   </section>
 
-  {/* SECTION 2: SERVICES SHOWCASE - One Job Per Section */}
-  <section class="py-24 bg-stone-50 border-b border-stone-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-4">Specialized Dental Care</h2>
-        <p class="text-lg text-stone-600">
-          We combine cutting-edge technology and gentle clinical practices to offer premium orthodontic and cosmetic solutions.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {featuredServices.map(service => (
-          <div class="group relative flex flex-col justify-between overflow-hidden bg-white rounded-2xl border border-stone-200 transition-all duration-300 hover:shadow-xl hover:border-teal-500/20">
-            <div>
-              <div class="aspect-video w-full overflow-hidden bg-stone-100">
-                <img 
-                  src={service.data.image.startsWith('/') ? `${base}${service.data.image.slice(1)}` : service.data.image} 
-                  alt={service.data.title} 
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-teal-600 transition-colors">
-                  {service.data.title}
-                </h3>
-                <p class="text-sm text-stone-600 leading-relaxed line-clamp-3">
-                  {service.data.summary}
-                </p>
-              </div>
-            </div>
-            <div class="p-6 pt-0">
-              <a href={`${base}services/${service.id}`} class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-800 transition-colors group/link">
-                Learn treatment details
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="text-center mt-12">
-        <a href={`${base}services`} class="btn btn-primary btn-outline font-semibold">
-          View All 14 Services
-        </a>
-      </div>
-    </div>
-  </section>
-
-  {/* SECTION 3: DR RADHIKA - One Job, Real Visual Anchor */}
-  <section class="py-24 bg-stone-100">
+  {/* SECTION 2: DR RADHIKA - About Doctor first, as requested */}
+  <section class="py-20 sm:py-24 bg-stone-50 border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-5 relative">
           <div class="aspect-[3/4] w-full rounded-2xl overflow-hidden bg-stone-200 shadow-2xl relative">
-            <img 
-              src={`${base}doctors/doctor-radhika-1.jpg`} 
-              alt="Dr. Radhika, lead dentist at One Smile Dental Care" 
+            <img
+              src={`${base}doctors/doctor-radhika-1.jpg`}
+              alt="Dr. Radhika Rastogi, lead dentist at One Smile Dental Care"
               class="w-full h-full object-cover"
               loading="lazy"
             />
@@ -162,10 +108,10 @@ const googleReviews = [
           </div>
         </div>
         <div class="lg:col-span-7 flex flex-col gap-6">
-          <span class="text-xs font-bold uppercase tracking-widest text-teal-600">Clinical Leadership</span>
-          <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-900">Dr. Radhika Rastogi</h2>
+          <span class="text-xs font-bold uppercase tracking-widest text-teal-600">About Doctor</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-900">Gentle, precise dental care led by Dr. Radhika Rastogi</h2>
           <p class="text-lg text-stone-600 leading-relaxed">
-            Led by Dr. Radhika Rastogi (senior resident from AIIMS & KGMC; MDS in Endodontics & Aesthetics), our team combines a deep passion for dental aesthetics with years of advanced surgical experience. We believe visiting the dentist should be sterile, pain-free, and customized to your goals.
+            One Smile Dental Care is led by Dr. Radhika Rastogi (MDS in Endodontics & Aesthetics; senior resident experience from AIIMS & KGMC). The clinic focuses on clear diagnosis, comfortable treatment, strict sterilization, and smile-focused outcomes.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
             <div class="flex items-start gap-3">
@@ -173,8 +119,8 @@ const googleReviews = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
               <div>
-                <h4 class="font-bold text-stone-900">Class-A Sterilization</h4>
-                <p class="text-sm text-stone-600">Strict hygiene protocols using autoclave technology for patient safety.</p>
+                <h4 class="font-bold text-stone-900">Sterile & Safe</h4>
+                <p class="text-sm text-stone-600">Hygiene-first protocols and modern clinical equipment for patient safety.</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -182,14 +128,17 @@ const googleReviews = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <div>
-                <h4 class="font-bold text-stone-900">Pain-Free Techniques</h4>
-                <p class="text-sm text-stone-600">Advanced anesthesia systems and rotary tools for comfortable procedures.</p>
+                <h4 class="font-bold text-stone-900">Comfort-Focused</h4>
+                <p class="text-sm text-stone-600">Calm explanations, gentle techniques, and customized treatment plans.</p>
               </div>
             </div>
           </div>
-          <div class="mt-4">
+          <div class="mt-4 flex flex-wrap gap-4">
             <a href={`${base}about`} class="btn btn-primary text-white">
-              Learn About Dr. Radhika Rastogi
+              Learn About Doctor
+            </a>
+            <a href="https://wa.me/918400021200" target="_blank" rel="noopener noreferrer" class="btn btn-outline text-stone-800 hover:bg-stone-200">
+              Book Appointment
             </a>
           </div>
         </div>
@@ -197,10 +146,55 @@ const googleReviews = [
     </div>
   </section>
 
+  {/* SECTION 3: SERVICES AT A GLANCE - concise homepage summaries */}
+  <section class="py-20 sm:py-24 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-teal-600">Our Services</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mt-3 mb-4">Dental treatments, simplified</h2>
+        <p class="text-lg text-stone-600">
+          The homepage now shows a quick overview only. Detailed treatment information, FAQs, and related blogs are available on each service page.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {sortedServices.map(service => (
+          <a href={`${base}services/${service.id}`} class="group block bg-stone-50 rounded-2xl border border-stone-200 p-5 transition-all duration-300 hover:bg-white hover:shadow-lg hover:border-teal-500/30 focus:outline-none focus:ring-2 focus:ring-teal-500">
+            <div class="flex items-start gap-4">
+              <div class="h-10 w-10 rounded-full bg-teal-100 text-teal-700 font-bold flex items-center justify-center shrink-0 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                {service.data.order}
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-stone-900 group-hover:text-teal-700 transition-colors">
+                  {service.data.title}
+                </h3>
+                <p class="text-sm text-stone-600 leading-relaxed mt-1 line-clamp-2">
+                  {service.data.summary}
+                </p>
+                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-700 mt-3">
+                  Summary, FAQs & details
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href={`${base}services`} class="btn btn-primary btn-outline font-semibold">
+          View Services Page
+        </a>
+      </div>
+    </div>
+  </section>
+
   {/* SECTION 4: PATIENT SMILE CAROUSEL - Premium Grid Carousel */}
   <section class="py-24 bg-stone-50 overflow-hidden border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       {/* Carousel Header (Centered) */}
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mb-4">Patient Smile Transformations</h2>
@@ -211,7 +205,7 @@ const googleReviews = [
 
       {/* Carousel Container with Absolute Overlay Buttons */}
       <div class="relative w-full group/carousel">
-        
+
         {/* Prev Button (Absolute Left Edge) */}
         <button id="carousel-prev" class="absolute -left-4 sm:left-4 top-1/2 -translate-y-1/2 btn btn-circle bg-white/80 backdrop-blur-md border-stone-200 text-stone-700 shadow-lg hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all duration-300 z-10" aria-label="Previous Slide">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -231,10 +225,10 @@ const googleReviews = [
           {patientPhotos.map((photo, idx) => (
             <div id={`slide-${idx}`} class="carousel-item w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] flex flex-col bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
               <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
-                <img 
-                  src={photo} 
-                  alt={`One Smile patient transformation ${idx + 1}`} 
-                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                <img
+                  src={photo}
+                  alt={`One Smile patient transformation ${idx + 1}`}
+                  class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   loading="lazy"
                 />
               </div>
@@ -254,13 +248,13 @@ const googleReviews = [
         const prevBtn = document.getElementById('carousel-prev');
         const nextBtn = document.getElementById('carousel-next');
         const track = document.getElementById('transformation-carousel');
-        
+
         if (prevBtn && nextBtn && track) {
           prevBtn.addEventListener('click', () => {
             const itemWidth = track.firstElementChild?.clientWidth || 300;
             track.scrollBy({ left: -(itemWidth + 24), behavior: 'smooth' });
           });
-          
+
           nextBtn.addEventListener('click', () => {
             const itemWidth = track.firstElementChild?.clientWidth || 300;
             track.scrollBy({ left: itemWidth + 24, behavior: 'smooth' });
@@ -281,7 +275,7 @@ const googleReviews = [
       </div>
 
       <div class="relative w-full max-w-3xl mx-auto">
-        
+
         {/* Reviews Carousel Prev Button */}
         <button id="reviews-prev" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 btn btn-circle btn-ghost text-stone-400 hover:text-teal-600 transition-all duration-300 z-10" aria-label="Previous Review">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -314,11 +308,11 @@ const googleReviews = [
                   </div>
                 </div>
               </div>
-              
+
               <blockquote class="text-lg sm:text-xl text-stone-700 font-medium italic max-w-2xl leading-relaxed">
                 "{review.text}"
               </blockquote>
-              
+
               <span class="text-xs text-stone-400 font-medium uppercase tracking-wider">{review.date} • Verified Google Review</span>
             </div>
           ))}
@@ -331,9 +325,9 @@ const googleReviews = [
         const transPrev = document.getElementById('carousel-prev');
         const transNext = document.getElementById('carousel-next');
         const transTrack = document.getElementById('transformation-carousel');
-        
+
         let transInterval: any;
-        
+
         function startTransAutoSlide() {
           stopTransAutoSlide();
           transInterval = setInterval(() => {
@@ -341,7 +335,7 @@ const googleReviews = [
             const itemWidth = transTrack.firstElementChild?.clientWidth || 300;
             const gap = 24;
             const maxScroll = transTrack.scrollWidth - transTrack.clientWidth;
-            
+
             if (transTrack.scrollLeft >= maxScroll - 10) {
               transTrack.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
@@ -349,17 +343,17 @@ const googleReviews = [
             }
           }, 4000);
         }
-        
+
         function stopTransAutoSlide() {
           if (transInterval) clearInterval(transInterval);
         }
-        
+
         if (transPrev && transNext && transTrack) {
           transPrev.addEventListener('click', () => {
             const itemWidth = transTrack.firstElementChild?.clientWidth || 300;
             const gap = 24;
             const maxScroll = transTrack.scrollWidth - transTrack.clientWidth;
-            
+
             if (transTrack.scrollLeft <= 10) {
               transTrack.scrollTo({ left: maxScroll, behavior: 'smooth' });
             } else {
@@ -367,12 +361,12 @@ const googleReviews = [
             }
             startTransAutoSlide();
           });
-          
+
           transNext.addEventListener('click', () => {
             const itemWidth = transTrack.firstElementChild?.clientWidth || 300;
             const gap = 24;
             const maxScroll = transTrack.scrollWidth - transTrack.clientWidth;
-            
+
             if (transTrack.scrollLeft >= maxScroll - 10) {
               transTrack.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
@@ -380,11 +374,11 @@ const googleReviews = [
             }
             startTransAutoSlide();
           });
-          
+
           // Pause on hover
           transTrack.addEventListener('mouseenter', stopTransAutoSlide);
           transTrack.addEventListener('mouseleave', startTransAutoSlide);
-          
+
           startTransAutoSlide();
         }
 
@@ -392,16 +386,16 @@ const googleReviews = [
         const revPrev = document.getElementById('reviews-prev');
         const revNext = document.getElementById('reviews-next');
         const revTrack = document.getElementById('reviews-carousel');
-        
+
         let revInterval: any;
-        
+
         function startRevAutoSlide() {
           stopRevAutoSlide();
           revInterval = setInterval(() => {
             if (!revTrack) return;
             const itemWidth = revTrack.clientWidth;
             const maxScroll = revTrack.scrollWidth - revTrack.clientWidth;
-            
+
             if (revTrack.scrollLeft >= maxScroll - 10) {
               revTrack.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
@@ -409,16 +403,16 @@ const googleReviews = [
             }
           }, 5000);
         }
-        
+
         function stopRevAutoSlide() {
           if (revInterval) clearInterval(revInterval);
         }
-        
+
         if (revPrev && revNext && revTrack) {
           revPrev.addEventListener('click', () => {
             const itemWidth = revTrack.clientWidth;
             const maxScroll = revTrack.scrollWidth - revTrack.clientWidth;
-            
+
             if (revTrack.scrollLeft <= 10) {
               revTrack.scrollTo({ left: maxScroll, behavior: 'smooth' });
             } else {
@@ -426,11 +420,11 @@ const googleReviews = [
             }
             startRevAutoSlide();
           });
-          
+
           revNext.addEventListener('click', () => {
             const itemWidth = revTrack.clientWidth;
             const maxScroll = revTrack.scrollWidth - revTrack.clientWidth;
-            
+
             if (revTrack.scrollLeft >= maxScroll - 10) {
               revTrack.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
@@ -438,11 +432,11 @@ const googleReviews = [
             }
             startRevAutoSlide();
           });
-          
+
           // Pause on hover
           revTrack.addEventListener('mouseenter', stopRevAutoSlide);
           revTrack.addEventListener('mouseleave', startRevAutoSlide);
-          
+
           startRevAutoSlide();
         }
       });
@@ -468,10 +462,10 @@ const googleReviews = [
             </div>
           </div>
           <div class="flex flex-wrap gap-4">
-            <a 
-              href="https://www.google.com/maps?cid=11247058903890459605&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=US&source=embed" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.google.com/maps?cid=11247058903890459605&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=US&source=embed"
+              target="_blank"
+              rel="noopener noreferrer"
               class="btn btn-primary text-white"
             >
               Get Directions
@@ -481,14 +475,14 @@ const googleReviews = [
             </a>
           </div>
         </div>
-        
+
         {/* Map Embed or Static Anchor */}
         <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-stone-200 shadow-lg relative bg-stone-100">
-          <iframe 
-            src="https://maps.google.com/maps?q=One%20Smile%20Dental%20Care,%20Gomti%20Nagar,%20Lucknow&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          <iframe
+            src="https://maps.google.com/maps?q=One%20Smile%20Dental%20Care,%20Gomti%20Nagar,%20Lucknow&t=&z=16&ie=UTF8&iwloc=&output=embed"
             class="w-full h-full border-0 absolute inset-0"
-            allowfullscreen="" 
-            loading="lazy" 
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Google Maps Location for One Smile Dental Care"
           ></iframe>
