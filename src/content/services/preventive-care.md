@@ -1,7 +1,7 @@
 ---
 title: "Preventive Care & Cleanings"
 description: "Keep your teeth healthy and bright with preventive care, routine checkups, and deep scaling at One Smile Dental Care. Stop dental issues before they start."
-image: "/clinic/treating-patient.jpg"
+image: "/services/treating-patient.jpg"
 summary: "Prevent gum disease, cavities, and bad breath. Routine cleanings, scaling, and comprehensive exams are the foundation of lifetime oral health."
 order: 4
 benefits:
