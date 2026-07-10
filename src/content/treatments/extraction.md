@@ -1,7 +1,7 @@
 ---
 title: "Gentle Tooth Extractions"
 description: "Experience safe, pain-free tooth extractions and wisdom teeth removal at One Smile Dental Care. Providing maximum comfort and careful post-op guidance."
-image: "/services/extraction.jpg"
+image: "/treatments/extraction.jpg"
 summary: "Safe removal of severely damaged, decayed, or crowded teeth, including wisdom teeth. We prioritize your comfort and quick healing."
 order: 7
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "Do I need to replace an extracted tooth?"
     answer: "Except for wisdom teeth or extractions done for orthodontic reasons, we strongly recommend replacing missing teeth with a dental implant or bridge to prevent neighboring teeth from shifting and causing bite problems."
 treatmentTime: "30 to 60 minutes"
-relatedServices:
+relatedTreatments:
   - "dental-implant"
   - "crown-and-bridges"
 ---

@@ -2,14 +2,14 @@
 title: "5 Warning Signs You Need Your Wisdom Teeth Removed"
 description: "Are your wisdom teeth causing problems? Read our guide on the top 5 warning signs that you need your wisdom teeth extracted before they damage your smile."
 pubDate: 2026-06-25
-heroImage: "/services/xray.jpg"
+heroImage: "/treatments/xray.jpg"
 author: "Dr. Radhika"
 category: "Oral Surgery"
 tags:
   - "Wisdom Teeth"
   - "Tooth Extraction"
   - "Oral Health"
-relatedServices:
+relatedTreatments:
   - "extraction"
   - "root-canal-treatment"
 ---
@@ -36,7 +36,7 @@ Because wisdom teeth are located at the very back of the mouth, they are notorio
 
 ## 4. Damage or Pain in Neighboring Teeth
 
-If a wisdom tooth grows horizontally or at an angle, it pushes directly against the roots of your second molars. This constant pressure can cause root resorption, damage the adjacent teeth, and lead to cavities that are difficult to treat. In severe cases, both the wisdom tooth and the damaged second molar may require [Extraction](/services/extraction).
+If a wisdom tooth grows horizontally or at an angle, it pushes directly against the roots of your second molars. This constant pressure can cause root resorption, damage the adjacent teeth, and lead to cavities that are difficult to treat. In severe cases, both the wisdom tooth and the damaged second molar may require [Extraction](/treatments/extraction).
 
 ## 5. Sinus Pain, Pressure, or Congestion
 

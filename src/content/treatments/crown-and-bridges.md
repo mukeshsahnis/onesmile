@@ -1,7 +1,7 @@
 ---
 title: "Dental Crowns & Bridges"
 description: "Restore damaged or missing teeth with custom-crafted dental crowns and bridges at One Smile Dental Care. Made from premium, long-lasting porcelain and ceramic."
-image: "/services/crown-and-bridges.jpg"
+image: "/treatments/crown-and-bridges.jpg"
 summary: "Protect cracked teeth and fill gaps in your smile. Our custom-designed crowns and bridges restore shape, size, and strength to your teeth."
 order: 2
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "Is the procedure painful?"
     answer: "We use local anesthesia to ensure comfort during preparation. Some sensitivity is normal for a few days after placement, but it quickly resolves."
 treatmentTime: "7 to 10 days over 2 visits"
-relatedServices:
+relatedTreatments:
   - "dental-implant"
   - "cosmetic-dentistry"
   - "dentures"

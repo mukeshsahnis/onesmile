@@ -1,7 +1,7 @@
 ---
 title: "Smile Makeover"
 description: "Achieve the ultimate aesthetic smile with a custom Smile Makeover at One Smile Dental Care. A tailored combination of veneers, crowns, implants, and whitening."
-image: "/services/smile-makeover.jpg"
+image: "/treatments/smile-makeover.jpg"
 summary: "The ultimate transformation. A comprehensive, customized treatment plan combining cosmetic and restorative procedures to create your dream smile."
 order: 10
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "How long does a smile makeover last?"
     answer: "With good oral hygiene and regular maintenance, the results of a smile makeover can last 10 to 20 years, depending on the specific procedures involved."
 treatmentTime: "2 to 3 weeks (longer if orthodontic work is required)"
-relatedServices:
+relatedTreatments:
   - "veneers"
   - "cosmetic-dentistry"
   - "teeth-whitening"

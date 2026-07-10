@@ -13,10 +13,10 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-// Fetch related services details
-const relatedServices = await Promise.all(
-  (entry.data.relatedServices || []).map(async (relatedId) => {
-    return await getEntry('services', relatedId);
+// Fetch related treatments details
+const relatedTreatments = await Promise.all(
+  (entry.data.relatedTreatments || []).map(async (relatedId) => {
+    return await getEntry('treatments', relatedId);
   })
 ).then(results => results.filter(Boolean));
 
@@ -51,7 +51,7 @@ const blogSchema = {
 };
 ---
 
-<Layout 
+<Layout
   title={`${entry.data.title} | One Smile Dental Care Blog`}
   description={entry.data.description}
   image={entry.data.heroImage}
@@ -92,16 +92,16 @@ const blogSchema = {
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
+
         {/* Main Content */}
         <div class="lg:col-span-8 flex flex-col gap-8">
-          
+
           {/* Main Visual Anchor */}
           {entry.data.heroImage && (
             <div class="aspect-video w-full rounded-2xl overflow-hidden bg-stone-200 shadow-md border border-stone-200">
-              <img 
-                src={entry.data.heroImage.startsWith('/') ? `${base}${entry.data.heroImage.slice(1)}` : entry.data.heroImage} 
-                alt={entry.data.title} 
+              <img
+                src={entry.data.heroImage.startsWith('/') ? `${base}${entry.data.heroImage.slice(1)}` : entry.data.heroImage}
+                alt={entry.data.title}
                 class="w-full h-full object-cover"
               />
             </div>
@@ -127,27 +127,27 @@ const blogSchema = {
 
         {/* Sidebar */}
         <div class="lg:col-span-4 flex flex-col gap-8">
-          
-          {/* Related Services Links */}
-          {relatedServices.length > 0 && (
+
+          {/* Related Treatments Links */}
+          {relatedTreatments.length > 0 && (
             <div class="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
               <h3 class="font-bold text-stone-900 text-base mb-4 border-b border-stone-100 pb-2">Related Treatments</h3>
               <div class="flex flex-col gap-4">
-                {relatedServices.map(relService => (
-                  <a href={`${base}services/${relService.id}`} class="group flex items-center gap-3 focus:outline-none">
+                {relatedTreatments.map(relTreatment => (
+                  <a href={`${base}treatments/${relTreatment.id}`} class="group flex items-center gap-3 focus:outline-none">
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0">
-                      <img 
-                        src={relService.data.image.startsWith('/') ? `${base}${relService.data.image.slice(1)}` : relService.data.image} 
-                        alt={relService.data.title} 
+                      <img
+                        src={relTreatment.data.image.startsWith('/') ? `${base}${relTreatment.data.image.slice(1)}` : relTreatment.data.image}
+                        alt={relTreatment.data.title}
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div class="flex flex-col">
                       <h4 class="text-sm font-bold text-stone-900 group-hover:text-teal-600 transition-colors leading-tight">
-                        {relService.data.title}
+                        {relTreatment.data.title}
                       </h4>
                       <span class="text-xs text-stone-500 line-clamp-1 mt-0.5">
-                        {relService.data.summary}
+                        {relTreatment.data.summary}
                       </span>
                     </div>
                   </a>
@@ -162,10 +162,10 @@ const blogSchema = {
             <p class="text-xs text-stone-200 leading-relaxed">
               Schedule a personalized consultation with Dr. Radhika to discuss your treatment options.
             </p>
-            <a 
-              href="https://wa.me/918400021200" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://wa.me/918400021200"
+              target="_blank"
+              rel="noopener noreferrer"
               class="btn btn-primary text-white w-full text-center"
             >
               Book via WhatsApp

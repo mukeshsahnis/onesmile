@@ -12,12 +12,12 @@ const blog = defineCollection({
     author: z.string().default("One Smile Dental Care"),
     category: z.string().default("General Dentistry"),
     tags: z.array(z.string()).default([]),
-    relatedServices: z.array(z.string()).default([]), // IDs of related services
+    relatedTreatments: z.array(z.string()).default([]), // IDs of related treatments
   })
 });
 
-const services = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/services' }),
+const treatments = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/treatments' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -30,8 +30,8 @@ const services = defineCollection({
       answer: z.string()
     })).default([]),
     treatmentTime: z.string().optional(),
-    relatedServices: z.array(z.string()).default([]), // IDs of related services
+    relatedTreatments: z.array(z.string()).default([]), // IDs of related treatments
   })
 });
 
-export const collections = { blog, services };
+export const collections = { blog, treatments };

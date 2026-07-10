@@ -1,7 +1,7 @@
 ---
 title: "Gum Disease Treatment (Periodontics)"
 description: "Stop bleeding gums, bad breath, and loose teeth with advanced gum treatment at One Smile Dental Care. Providing deep cleaning, scaling, and root planing."
-image: "/services/gums-treatment.jpg"
+image: "/treatments/gums-treatment.jpg"
 summary: "Treat bleeding gums, bad breath, and recession. Deep cleaning (scaling and root planing) restores health to the tissues that support your teeth."
 order: 6
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "Will my gums grow back after treatment?"
     answer: "While gum treatment halts the destruction of bone and gum tissue, lost gum tissue usually does not grow back naturally. However, treating the disease stops further recession and keeps the remaining structures healthy."
 treatmentTime: "1 to 2 visits"
-relatedServices:
+relatedTreatments:
   - "preventive-care"
   - "extraction"
 ---

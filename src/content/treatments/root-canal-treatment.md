@@ -1,7 +1,7 @@
 ---
 title: "Root Canal Treatment"
 description: "Save your infected teeth with pain-free, single-sitting Root Canal Treatment (RCT) at One Smile Dental Care. Stop toothaches and preserve your natural smile."
-image: "/services/root-canal-treatment.jpg"
+image: "/treatments/root-canal-treatment.jpg"
 summary: "Save a severely decayed or infected tooth from extraction. Our modern, pain-free root canal treatment eliminates pain and repairs your natural tooth."
 order: 3
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "Do I need a crown after a root canal?"
     answer: "Yes, in almost all cases. A root canal removes the tooth's blood supply, making it brittle and prone to fracturing. A custom crown restores its strength and protects it from breaking."
 treatmentTime: "1 to 2 sessions (approx. 45-60 mins each)"
-relatedServices:
+relatedTreatments:
   - "crown-and-bridges"
   - "preventive-care"
   - "dental-implant"

@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection, getEntry, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const services = await getCollection('services');
-  return services.map(entry => ({
+  const treatments = await getCollection('treatments');
+  return treatments.map(entry => ({
     params: { id: entry.id },
     props: { entry },
   }));
@@ -13,17 +13,17 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-// Fetch related services details
-const relatedServices = await Promise.all(
-  (entry.data.relatedServices || []).map(async (relatedId) => {
-    return await getEntry('services', relatedId);
+// Fetch related treatments details
+const relatedTreatments = await Promise.all(
+  (entry.data.relatedTreatments || []).map(async (relatedId) => {
+    return await getEntry('treatments', relatedId);
   })
 ).then(results => results.filter(Boolean));
 
-// Fetch blog posts that relate to this service
+// Fetch blog posts that relate to this treatment
 const allBlogPosts = await getCollection('blog');
-const relatedBlogPosts = allBlogPosts.filter(post => 
-  (post.data.relatedServices || []).includes(entry.id)
+const relatedBlogPosts = allBlogPosts.filter(post =>
+  (post.data.relatedTreatments || []).includes(entry.id)
 );
 
 // Dynamic FAQ Schema Markup
@@ -42,7 +42,7 @@ const faqSchema = {
 };
 ---
 
-<Layout 
+<Layout
   title={`${entry.data.title} | One Smile Dental Care`}
   description={entry.data.description}
   image={entry.data.image}
@@ -63,7 +63,7 @@ const faqSchema = {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
             </svg>
-            <a href={`${base}services`} class="hover:text-teal-600 transition-colors">Services</a>
+            <a href={`${base}treatments`} class="hover:text-teal-600 transition-colors">Treatments</a>
           </li>
           <li class="flex items-center gap-2 text-stone-400">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -79,15 +79,15 @@ const faqSchema = {
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
+
         {/* Main Content Area */}
         <div class="lg:col-span-8 flex flex-col gap-10">
-          
+
           {/* Main Visual Anchor */}
           <div class="aspect-video w-full rounded-2xl overflow-hidden bg-stone-200 shadow-lg border border-stone-200">
-            <img 
-              src={entry.data.image.startsWith('/') ? `${base}${entry.data.image.slice(1)}` : entry.data.image} 
-              alt={`Clinical details for ${entry.data.title}`} 
+            <img
+              src={entry.data.image.startsWith('/') ? `${base}${entry.data.image.slice(1)}` : entry.data.image}
+              alt={`Clinical details for ${entry.data.title}`}
               class="w-full h-full object-cover"
             />
           </div>
@@ -104,7 +104,7 @@ const faqSchema = {
               <div class="flex flex-col gap-3">
                 {entry.data.faqs.map((faq, idx) => (
                   <div class="collapse collapse-plus bg-white border border-stone-200 rounded-xl">
-                    <input type="radio" name="faq-accordion" checked={idx === 0 ? "checked" : undefined} /> 
+                    <input type="radio" name="faq-accordion" checked={idx === 0 ? "checked" : undefined} />
                     <div class="collapse-title text-base font-bold text-stone-900 pr-12">
                       {faq.question}
                     </div>
@@ -121,7 +121,7 @@ const faqSchema = {
 
         {/* Sidebar Info Area */}
         <div class="lg:col-span-4 flex flex-col gap-8">
-          
+
           {/* Treatment Benefits */}
           {entry.data.benefits && entry.data.benefits.length > 0 && (
             <div class="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
@@ -148,10 +148,10 @@ const faqSchema = {
                 <span class="text-base font-bold text-stone-100">{entry.data.treatmentTime}</span>
               </div>
               <div class="divider border-stone-800 my-1"></div>
-              <a 
+              <a
                 href={`https://wa.me/918400021200?text=Hello%20One%20Smile%20Dental%20Care,%20I%20am%20interested%20in%20learning%20more%20about%20${encodeURIComponent(entry.data.title)}`}
-                target="_blank" 
-                rel="noopener noreferrer" 
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary text-white w-full text-center"
               >
                 Inquire via WhatsApp
@@ -178,26 +178,26 @@ const faqSchema = {
             </div>
           )}
 
-          {/* Related Services */}
-          {relatedServices.length > 0 && (
+          {/* Related Treatments */}
+          {relatedTreatments.length > 0 && (
             <div class="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
               <h3 class="font-bold text-stone-900 text-lg mb-4 border-b border-stone-100 pb-2">Related Treatments</h3>
               <div class="flex flex-col gap-4">
-                {relatedServices.map(relService => (
-                  <a href={`${base}services/${relService.id}`} class="group flex items-center gap-3 focus:outline-none">
+                {relatedTreatments.map(relTreatment => (
+                  <a href={`${base}treatments/${relTreatment.id}`} class="group flex items-center gap-3 focus:outline-none">
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0">
-                      <img 
-                        src={relService.data.image.startsWith('/') ? `${base}${relService.data.image.slice(1)}` : relService.data.image} 
-                        alt={relService.data.title} 
+                      <img
+                        src={relTreatment.data.image.startsWith('/') ? `${base}${relTreatment.data.image.slice(1)}` : relTreatment.data.image}
+                        alt={relTreatment.data.title}
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div class="flex flex-col">
                       <h4 class="text-sm font-bold text-stone-900 group-hover:text-teal-600 transition-colors leading-tight">
-                        {relService.data.title}
+                        {relTreatment.data.title}
                       </h4>
                       <span class="text-xs text-stone-500 line-clamp-1 mt-0.5">
-                        {relService.data.summary}
+                        {relTreatment.data.summary}
                       </span>
                     </div>
                   </a>

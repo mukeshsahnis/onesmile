@@ -1,7 +1,7 @@
 ---
 title: "Preventive Care & Cleanings"
 description: "Keep your teeth healthy and bright with preventive care, routine checkups, and deep scaling at One Smile Dental Care. Stop dental issues before they start."
-image: "/services/treating-patient.jpg"
+image: "/treatments/treating-patient.jpg"
 summary: "Prevent gum disease, cavities, and bad breath. Routine cleanings, scaling, and comprehensive exams are the foundation of lifetime oral health."
 order: 4
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "What is fluoride treatment?"
     answer: "A fluoride treatment is a quick, topical gel or varnish applied to teeth that strengthens the enamel, making it highly resistant to acid attacks and decay."
 treatmentTime: "30 to 45 minutes"
-relatedServices:
+relatedTreatments:
   - "gums-treatment"
   - "teeth-whitening"
   - "kids-dentistry"

@@ -2,14 +2,14 @@
 title: "Clear Aligners vs. Braces: Which is Right for You?"
 description: "Choosing between braces and clear aligners? Read our comprehensive comparison of cost, appearance, comfort, and treatment time to find your perfect fit."
 pubDate: 2026-06-18
-heroImage: "/services/braces-aligners.jpg"
+heroImage: "/treatments/braces-aligners.jpg"
 author: "Dr. Radhika"
 category: "Orthodontics"
 tags:
   - "Clear Aligners"
   - "Braces"
   - "Cosmetic Dentistry"
-relatedServices:
+relatedTreatments:
   - "braces-and-aligners"
   - "cosmetic-dentistry"
 ---
@@ -48,4 +48,4 @@ Let’s look at a detailed comparison to help you make an informed decision.
 
 ### Making the Choice
 
-At One Smile Dental Care, we analyze your digital impressions and dental structure during your [Braces & Aligners](/services/braces-and-aligners) consultation to determine if you are a candidate for clear aligners. We will guide you toward the treatment that fits your clinical needs, budget, and lifestyle.
+At One Smile Dental Care, we analyze your digital impressions and dental structure during your [Braces & Aligners](/treatments/braces-and-aligners) consultation to determine if you are a candidate for clear aligners. We will guide you toward the treatment that fits your clinical needs, budget, and lifestyle.

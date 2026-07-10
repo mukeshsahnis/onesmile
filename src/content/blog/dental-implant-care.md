@@ -2,14 +2,14 @@
 title: "How to Care for Your Dental Implants: A Complete Guide"
 description: "Learn how to care for your dental implants to ensure they last a lifetime. Discover brushing tips, flossing techniques, and regular checkup recommendations."
 pubDate: 2026-07-02
-heroImage: "/services/dental-implant.jpg"
+heroImage: "/treatments/dental-implant.jpg"
 author: "Dr. Radhika"
 category: "Dental Implants"
 tags:
   - "Dental Implants"
   - "Oral Hygiene"
   - "Preventive Care"
-relatedServices:
+relatedTreatments:
   - "dental-implant"
   - "preventive-care"
 ---
@@ -41,6 +41,6 @@ Smoking is one of the most common causes of dental implant failure. Nicotine res
 
 ## 4. Visit Your Dentist Every 6 Months
 
-Even with perfect home care, professional cleanings are essential. During your [Preventive Care](/services/preventive-care) visits at One Smile Dental Care, we use specialized tools made of plastic or resin (rather than metal) to clean around the titanium implants. This ensures we remove calcified tartar without scratching the implant structure.
+Even with perfect home care, professional cleanings are essential. During your [Preventive Care](/treatments/preventive-care) visits at One Smile Dental Care, we use specialized tools made of plastic or resin (rather than metal) to clean around the titanium implants. This ensures we remove calcified tartar without scratching the implant structure.
 
 We will also take periodic digital X-rays to monitor the bone levels around your implant, ensuring it remains securely anchored.

@@ -1,7 +1,7 @@
 ---
 title: "Braces & Clear Aligners"
 description: "Straighten your teeth and correct your bite with custom orthodontic treatments, including clear aligners and ceramic braces, at One Smile Dental Care."
-image: "/services/braces-aligners.jpg"
+image: "/treatments/braces-aligners.jpg"
 summary: "Get the straight smile you have always wanted. Choose from virtually invisible clear aligners, aesthetic ceramic braces, or traditional metal braces."
 order: 8
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "Am I too old for braces or aligners?"
     answer: "No! Orthodontic treatment is highly successful for patients of all ages, including adults. As long as your teeth and gums are healthy, we can straighten your smile."
 treatmentTime: "12 to 24 months"
-relatedServices:
+relatedTreatments:
   - "cosmetic-dentistry"
   - "smile-makeover"
   - "kids-dentistry"

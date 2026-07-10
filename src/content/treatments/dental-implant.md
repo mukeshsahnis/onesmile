@@ -1,7 +1,7 @@
 ---
 title: "Advanced Dental Implants"
 description: "Restore your missing teeth with premium, permanent dental implants at One Smile Dental Care. Enjoy natural-looking, lifetime implants that behave like real teeth."
-image: "/services/dental-implant.jpg"
+image: "/treatments/dental-implant.jpg"
 summary: "The gold standard for replacing missing teeth. Experience permanent, durable, and natural-looking implants that restore your smile and bite."
 order: 1
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "How long do dental implants last?"
     answer: "With proper oral hygiene and regular dental checkups, dental implants can last a lifetime. The implant post fuses permanently with your jawbone."
 treatmentTime: "3 to 6 months (includes healing time)"
-relatedServices:
+relatedTreatments:
   - "crown-and-bridges"
   - "dentures"
   - "smile-makeover"

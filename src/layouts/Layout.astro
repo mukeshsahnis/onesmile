@@ -12,14 +12,14 @@ interface Props {
 const {
   title = "One Smile Dental Care | Premium Dental Clinic & Implant Centre",
   description = "Experience premium dental care at One Smile Dental Care. Providing world-class Dental Implants, Root Canal Treatments, Braces, Smile Makeovers, and Kids Dentistry with state-of-the-art technology.",
-  image = "/services/treating-patient.jpg",
+  image = "/treatments/treating-patient.jpg",
   canonicalURL = Astro.url.href,
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const navLinks = [
   { name: "About Us", href: `${base}about` },
-  { name: "Services", href: `${base}services` },
+  { name: "Treatments", href: `${base}treatments` },
   { name: "Gallery", href: `${base}gallery` },
   { name: "Blog", href: `${base}blog` },
   { name: "Contact Us", href: `${base}contact` }
@@ -77,9 +77,9 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
         <div class="flex items-center justify-between h-20">
           {/* Logo Brand area */}
           <a href={base} class="flex items-center gap-3 group focus:outline-none">
-            <img 
-              src={`${base}logos/logo.png`} 
-              alt="One Smile Dental Care Logo" 
+            <img
+              src={`${base}logos/logo.png`}
+              alt="One Smile Dental Care Logo"
               class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <span class="sr-only">One Smile Dental Care</span>
@@ -88,8 +88,8 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
           {/* Desktop Nav */}
           <nav class="hidden md:flex items-center gap-8">
             {navLinks.map(link => (
-              <a 
-                href={link.href} 
+              <a
+                href={link.href}
                 class="text-sm font-semibold tracking-wide text-stone-700 hover:text-teal-600 transition-colors duration-200 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal-600 hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.name}
@@ -99,10 +99,10 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
 
           {/* CTA & Mobile Toggle */}
           <div class="flex items-center gap-4">
-            <a 
-              href="https://wa.me/918400021200" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://wa.me/918400021200"
+              target="_blank"
+              rel="noopener noreferrer"
               class="hidden sm:inline-flex btn btn-primary text-sm font-semibold transition-transform duration-300 hover:scale-105 active:scale-95 shadow-md shadow-teal-600/10 hover:shadow-teal-600/20"
             >
               Book Appointment
@@ -110,17 +110,17 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
 
             {/* Mobile menu dropdown using DaisyUI */}
             <div class="dropdown dropdown-end md:hidden">
-              <button 
-                tabindex="0" 
-                class="btn btn-ghost btn-circle text-stone-700 hover:bg-stone-200/50" 
+              <button
+                tabindex="0"
+                class="btn btn-ghost btn-circle text-stone-700 hover:bg-stone-200/50"
                 aria-label="Toggle Menu"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
                 </svg>
               </button>
-              <ul 
-                tabindex="0" 
+              <ul
+                tabindex="0"
                 class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-xl bg-stone-50 border border-stone-200 rounded-box w-52 gap-2"
               >
                 {navLinks.map(link => (
@@ -132,10 +132,10 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
                 ))}
                 <div class="divider my-1"></div>
                 <li>
-                  <a 
-                    href="https://wa.me/918400021200" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://wa.me/918400021200"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-primary btn-sm text-white w-full text-center"
                   >
                     WhatsApp Book
@@ -160,9 +160,9 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
           {/* Brand Col */}
           <div class="flex flex-col gap-6">
             <a href={base} class="flex items-center gap-3 group focus:outline-none">
-              <img 
-                src={`${base}logos/logo.png`} 
-                alt="One Smile Dental Care" 
+              <img
+                src={`${base}logos/logo.png`}
+                alt="One Smile Dental Care"
                 class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </a>
@@ -170,10 +170,10 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
               Your home for advanced, gentle dental care. We specialize in implants, cosmetic smile design, and family dentistry in a comfortable, sterile environment.
             </p>
             <div class="flex gap-4">
-              <a 
-                href={facebookLink} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={facebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="p-2 bg-stone-800 hover:bg-teal-600 rounded-full text-stone-300 hover:text-white transition-all duration-300"
                 aria-label="Facebook"
               >
@@ -181,10 +181,10 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
                   <path d="M9 8H7v3h2v9h3v-9h3.2l.3-3H12V6.3C12 5.5 12.3 5 13.5 5H15V2h-2.5C9.8 2 8 3.8 8 6.5V8z"/>
                 </svg>
               </a>
-              <a 
-                href={instagramLink} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={instagramLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="p-2 bg-stone-800 hover:bg-teal-600 rounded-full text-stone-300 hover:text-white transition-all duration-300"
                 aria-label="Instagram"
               >
@@ -192,10 +192,10 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                 </svg>
               </a>
-              <a 
-                href={`https://wa.me/${whatsappNo.replace('+', '')}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={`https://wa.me/${whatsappNo.replace('+', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="p-2 bg-stone-800 hover:bg-teal-600 rounded-full text-stone-300 hover:text-white transition-all duration-300"
                 aria-label="WhatsApp"
               >
@@ -211,7 +211,7 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
             <h3 class="text-white text-base font-semibold uppercase tracking-wider mb-6">Quick Links</h3>
             <ul class="flex flex-col gap-4 text-sm">
               <li><a href={`${base}about`} class="hover:text-teal-400 transition-colors">About Our Clinic</a></li>
-              <li><a href={`${base}services`} class="hover:text-teal-400 transition-colors">Dental Services</a></li>
+              <li><a href={`${base}treatments`} class="hover:text-teal-400 transition-colors">Dental Treatments</a></li>
               <li><a href={`${base}gallery`} class="hover:text-teal-400 transition-colors">Clinic Gallery</a></li>
               <li><a href={`${base}blog`} class="hover:text-teal-400 transition-colors">Dental Blog & Tips</a></li>
               <li><a href={`${base}contact`} class="hover:text-teal-400 transition-colors">Get In Touch</a></li>

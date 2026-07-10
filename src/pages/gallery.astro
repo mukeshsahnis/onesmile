@@ -4,12 +4,12 @@ import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 const clinicImages = [
-  { src: "/services/treating-patient.jpg", title: "Patient Treatment Studio", category: "Facility" },
-  { src: "/services/ster.jpg", title: "Class-B Autoclave Sterilizer", category: "Sterilization" },
-  { src: "/services/wtarepurif.webp", title: "Closed-Loop Pure Water Unit", category: "Technology" },
-  { src: "/services/xray.jpg", title: "Digital X-Ray Diagnoses", category: "Technology" },
-  { src: "/services/dental.jpg", title: "Dental Operatory", category: "Facility" },
-  { src: "/services/tools.jpg", title: "Endodontic Rotary Instruments", category: "Equipment" }
+  { src: "/treatments/treating-patient.jpg", title: "Patient Treatment Studio", category: "Facility" },
+  { src: "/treatments/ster.jpg", title: "Class-B Autoclave Sterilizer", category: "Sterilization" },
+  { src: "/treatments/wtarepurif.webp", title: "Closed-Loop Pure Water Unit", category: "Technology" },
+  { src: "/treatments/xray.jpg", title: "Digital X-Ray Diagnoses", category: "Technology" },
+  { src: "/treatments/dental.jpg", title: "Dental Operatory", category: "Facility" },
+  { src: "/treatments/tools.jpg", title: "Endodontic Rotary Instruments", category: "Equipment" }
 ].map(img => ({ ...img, src: `${base}${img.src.replace(/^\//, '')}` }));
 
 const patientPhotos = [
@@ -26,7 +26,7 @@ const patientPhotos = [
 ].map(path => `${base}${path.replace(/^\//, '')}`);
 ---
 
-<Layout 
+<Layout
   title="Clinic Gallery | One Smile Dental Care"
   description="Take a visual tour of One Smile Dental Care. See our sterile operatory, advanced dental equipment, water purification setups, and beautiful patient results."
 >
@@ -62,9 +62,9 @@ const patientPhotos = [
         {clinicImages.map(img => (
           <div class="group relative overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md">
             <div class="aspect-video w-full overflow-hidden bg-stone-100 relative">
-              <img 
-                src={img.src} 
-                alt={img.title} 
+              <img
+                src={img.src}
+                alt={img.title}
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                 loading="lazy"
               />
@@ -95,9 +95,9 @@ const patientPhotos = [
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {patientPhotos.map((photo, idx) => (
           <div class="group relative overflow-hidden rounded-xl border border-stone-200 shadow-sm aspect-square bg-white">
-            <img 
-              src={photo} 
-              alt={`One Smile patient transformation ${idx + 1}`} 
+            <img
+              src={photo}
+              alt={`One Smile patient transformation ${idx + 1}`}
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />

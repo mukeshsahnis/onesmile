@@ -1,7 +1,7 @@
 ---
 title: "Complete & Partial Dentures"
 description: "Restore your bite and confidence with custom-crafted, comfortable complete and partial dentures at One Smile Dental Care. Learn about implant-supported dentures."
-image: "/services/dentures.jpg"
+image: "/treatments/dentures.jpg"
 summary: "Replace multiple or all missing teeth. Choose from lightweight, flexible partial dentures or secure, implant-supported complete dentures."
 order: 12
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "Are implant-supported dentures better?"
     answer: "Yes, significantly. Implant-supported dentures are anchored by 2 to 4 dental implants in the jawbone. This prevents them from slipping or moving, eliminates the need for adhesives, and preserves jawbone health."
 treatmentTime: "2 to 3 weeks over 4 to 5 sessions"
-relatedServices:
+relatedTreatments:
   - "dental-implant"
   - "extraction"
   - "crown-and-bridges"

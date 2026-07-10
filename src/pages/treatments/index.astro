@@ -2,17 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-const services = await getCollection('services');
-const sortedServices = services.sort((a, b) => a.data.order - b.data.order);
+const treatments = await getCollection('treatments');
+const sortedTreatments = treatments.sort((a, b) => a.data.order - b.data.order);
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
-// ServiceList Schema for Local SEO
+// TreatmentList Schema for Local SEO
 const schema = {
   "@context": "https://schema.org",
   "@type": "Dentist",
   "name": "One Smile Dental Care",
-  "image": "https://onesmiledentalcare.com/services/treating-patient.jpg",
-  "url": "https://onesmiledentalcare.com/services",
+  "image": "https://onesmiledentalcare.com/treatments/treating-patient.jpg",
+  "url": "https://onesmiledentalcare.com/treatments",
   "telephone": "+918400021200",
   "email": "onesmile.dentalcare@gmail.com",
   "address": {
@@ -25,13 +25,13 @@ const schema = {
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Dental Services Offered",
-    "itemListElement": sortedServices.map((service, idx) => ({
+    "name": "Dental Treatments Offered",
+    "itemListElement": sortedTreatments.map((treatment, idx) => ({
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": service.data.title,
-        "description": service.data.description
+        "name": treatment.data.title,
+        "description": treatment.data.description
       },
       "position": idx + 1
     }))
@@ -39,9 +39,9 @@ const schema = {
 };
 ---
 
-<Layout 
-  title="Dental Services & Procedures | One Smile Dental Care"
-  description="Explore our full list of 14 premium dental services including Dental Implants, Root Canal Treatments, Clear Aligners, Teeth Whitening, and Gum Treatments."
+<Layout
+  title="Dental Treatments & Procedures | One Smile Dental Care"
+  description="Explore our full list of 14 premium dental treatments including Dental Implants, Root Canal Treatments, Clear Aligners, Teeth Whitening, and Gum Treatments."
 >
   {/* JSON-LD Structured Data */}
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
@@ -56,50 +56,50 @@ const schema = {
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
           </svg>
-          <span class="text-teal-600">Services</span>
+          <span class="text-teal-600">Treatments</span>
         </li>
       </ol>
-      <h1 class="text-3xl font-extrabold text-stone-900 mt-2">Our Dental Services</h1>
+      <h1 class="text-3xl font-extrabold text-stone-900 mt-2">Our Dental Treatments</h1>
     </div>
   </nav>
 
   <section class="py-20 bg-stone-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {sortedServices.map(service => (
+        {sortedTreatments.map(treatment => (
           <div class="group relative flex flex-col justify-between overflow-hidden bg-white rounded-2xl border border-stone-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-teal-500/20">
             <div>
               <div class="aspect-video w-full overflow-hidden bg-stone-100 relative">
-                <img 
-                  src={service.data.image.startsWith('/') ? `${base}${service.data.image.slice(1)}` : service.data.image} 
-                  alt={service.data.title} 
+                <img
+                  src={treatment.data.image.startsWith('/') ? `${base}${treatment.data.image.slice(1)}` : treatment.data.image}
+                  alt={treatment.data.title}
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-teal-600 transition-colors">
-                  <a href={`${base}services/${service.id}`} class="focus:outline-none hover:underline">
-                    {service.data.title}
+                  <a href={`${base}treatments/${treatment.id}`} class="focus:outline-none hover:underline">
+                    {treatment.data.title}
                   </a>
                 </h3>
                 <p class="text-sm text-stone-600 leading-relaxed line-clamp-3 mb-4">
-                  {service.data.summary}
+                  {treatment.data.summary}
                 </p>
-                
-                {service.data.treatmentTime && (
+
+                {treatment.data.treatmentTime && (
                   <div class="flex items-center gap-1.5 text-xs text-stone-500 font-medium">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    Time: {service.data.treatmentTime}
+                    Time: {treatment.data.treatmentTime}
                   </div>
                 )}
               </div>
             </div>
-            
+
             <div class="p-6 pt-0 border-t border-stone-100 mt-4">
-              <a href={`${base}services/${service.id}`} class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-800 transition-colors group/link">
+              <a href={`${base}treatments/${treatment.id}`} class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-800 transition-colors group/link">
                 View Full Treatment Guide
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

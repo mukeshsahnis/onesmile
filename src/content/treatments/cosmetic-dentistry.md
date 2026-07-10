@@ -1,7 +1,7 @@
 ---
 title: "Cosmetic Dentistry"
-description: "Transform your smile with premium cosmetic dentistry services at One Smile Dental Care. Providing composite bonding, teeth whitening, veneers, and re-contouring."
-image: "/services/cosmetic-dentistry.jpg"
+description: "Transform your smile with premium cosmetic dentistry treatments at One Smile Dental Care. Providing composite bonding, teeth whitening, veneers, and re-contouring."
+image: "/treatments/cosmetic-dentistry.jpg"
 summary: "Enhance the aesthetic beauty of your smile. We correct chips, gaps, stains, and minor misalignments for a brilliant, natural-looking transformation."
 order: 9
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "How long does a cosmetic smile transformation take?"
     answer: "It varies. Simple treatments like teeth whitening can be completed in a single 1-hour visit, whereas porcelain veneers or a complete smile makeover may take 1 to 2 weeks."
 treatmentTime: "Varies (from 1 hour to 2 weeks)"
-relatedServices:
+relatedTreatments:
   - "smile-makeover"
   - "veneers"
   - "teeth-whitening"

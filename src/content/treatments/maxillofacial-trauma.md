@@ -1,7 +1,7 @@
 ---
 title: "Maxillofacial Trauma & Fractures"
 description: "Receive emergency surgical care for facial trauma, jaw fractures, and dental lacerations at One Smile Dental Care. Managed by experienced maxillofacial surgeons."
-image: "/services/maxillofacial-trauma.jpg"
+image: "/treatments/maxillofacial-trauma.jpg"
 summary: "Specialized emergency care for facial injuries, jaw fractures, and severe dental trauma, restoring facial structure and function."
 order: 11
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "How are jaw fractures treated?"
     answer: "Jaw fractures are treated by aligning the broken bones back into their correct positions and securing them (often using wire splints or small plates) to allow them to heal, restoring your normal bite."
 treatmentTime: "Varies depending on injury severity"
-relatedServices:
+relatedTreatments:
   - "extraction"
   - "dental-implant"
 ---
@@ -29,7 +29,7 @@ Facial injuries can be emotionally and physically challenging. **Maxillofacial t
 
 At One Smile Dental Care, our surgical team is highly trained in managing complex facial injuries, including jaw fractures, soft tissue lacerations, and severe dental trauma, in a safe, sterile environment.
 
-## Our Trauma Care Services Cover:
+## Our Trauma Care Treatments Cover:
 
 1. **Facial Bone Fractures:** Aligning and stabilizing fractures of the jaw (mandible), upper jaw (maxilla), cheekbones, and eye sockets.
 2. **Replanting Knocked-out (Avulsed) Teeth:** Emergency splinting of teeth that have been knocked loose or entirely out of their sockets.

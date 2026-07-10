@@ -1,7 +1,7 @@
 ---
 title: "Porcelain & Composite Veneers"
 description: "Get a flawless, Hollywood smile with custom porcelain and composite veneers at One Smile Dental Care. Correct chips, gaps, and severe stains."
-image: "/services/veneers.jpg"
+image: "/treatments/veneers.jpg"
 summary: "Wafer-thin, custom-made shells bonded to the front of your teeth. Correct chips, gaps, alignment issues, and severe discoloration for a perfect smile."
 order: 14
 benefits:
@@ -18,7 +18,7 @@ faqs:
   - question: "How do I care for my veneers?"
     answer: "Brush and floss normally with non-abrasive toothpaste. Avoid biting into very hard objects (like ice or hard candy) directly with your veneered front teeth, and wear a nightguard if you grind your teeth."
 treatmentTime: "2 visits over 7 to 10 days (for porcelain)"
-relatedServices:
+relatedTreatments:
   - "cosmetic-dentistry"
   - "smile-makeover"
   - "teeth-whitening"
