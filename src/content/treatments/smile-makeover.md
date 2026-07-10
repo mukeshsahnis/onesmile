@@ -1,7 +1,7 @@
 ---
 title: "Smile Makeover"
 description: "Achieve the ultimate aesthetic smile with a custom Smile Makeover at One Smile Dental Care. A tailored combination of veneers, crowns, implants, and whitening."
-image: "/treatments/smile-makeover.jpg"
+image: "/treatments/treating-patient.jpg"
 summary: "The ultimate transformation. A comprehensive, customized treatment plan combining cosmetic and restorative procedures to create your dream smile."
 order: 10
 benefits:

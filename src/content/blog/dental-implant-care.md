@@ -2,7 +2,7 @@
 title: "How to Care for Your Dental Implants: A Complete Guide"
 description: "Learn how to care for your dental implants to ensure they last a lifetime. Discover brushing tips, flossing techniques, and regular checkup recommendations."
 pubDate: 2026-07-02
-heroImage: "/treatments/dental-implant.jpg"
+heroImage: "/treatments/xray.jpg"
 author: "Dr. Radhika"
 category: "Dental Implants"
 tags:

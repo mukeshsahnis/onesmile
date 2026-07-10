@@ -1,7 +1,7 @@
 ---
 title: "Root Canal Treatment"
 description: "Save your infected teeth with pain-free, single-sitting Root Canal Treatment (RCT) at One Smile Dental Care. Stop toothaches and preserve your natural smile."
-image: "/treatments/root-canal-treatment.jpg"
+image: "/treatments/tools.jpg"
 summary: "Save a severely decayed or infected tooth from extraction. Our modern, pain-free root canal treatment eliminates pain and repairs your natural tooth."
 order: 3
 benefits:

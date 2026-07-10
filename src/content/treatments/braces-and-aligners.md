@@ -1,7 +1,7 @@
 ---
 title: "Braces & Clear Aligners"
 description: "Straighten your teeth and correct your bite with custom orthodontic treatments, including clear aligners and ceramic braces, at One Smile Dental Care."
-image: "/treatments/braces-aligners.jpg"
+image: "/treatments/xray.jpg"
 summary: "Get the straight smile you have always wanted. Choose from virtually invisible clear aligners, aesthetic ceramic braces, or traditional metal braces."
 order: 8
 benefits:

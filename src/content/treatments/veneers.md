@@ -1,7 +1,7 @@
 ---
 title: "Porcelain & Composite Veneers"
 description: "Get a flawless, Hollywood smile with custom porcelain and composite veneers at One Smile Dental Care. Correct chips, gaps, and severe stains."
-image: "/treatments/veneers.jpg"
+image: "/treatments/crown-and-bridges.jpg"
 summary: "Wafer-thin, custom-made shells bonded to the front of your teeth. Correct chips, gaps, alignment issues, and severe discoloration for a perfect smile."
 order: 14
 benefits:

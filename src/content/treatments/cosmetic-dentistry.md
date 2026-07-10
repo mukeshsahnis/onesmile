@@ -1,7 +1,7 @@
 ---
 title: "Cosmetic Dentistry"
 description: "Transform your smile with premium cosmetic dentistry treatments at One Smile Dental Care. Providing composite bonding, teeth whitening, veneers, and re-contouring."
-image: "/treatments/cosmetic-dentistry.jpg"
+image: "/treatments/treating-patient.jpg"
 summary: "Enhance the aesthetic beauty of your smile. We correct chips, gaps, stains, and minor misalignments for a brilliant, natural-looking transformation."
 order: 9
 benefits:
