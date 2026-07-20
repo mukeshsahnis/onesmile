@@ -6,8 +6,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://mukeshsahnis.github.io",
-  base: "/onesmile",
+  site: "https://onesmiledentalcare.com",
+  base: "/",
   vite: {
     plugins: [tailwindcss()]
   },
