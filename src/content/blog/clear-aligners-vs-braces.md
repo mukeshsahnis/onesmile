@@ -2,7 +2,7 @@
 title: "Clear Aligners vs. Braces: Which is Right for You?"
 description: "Choosing between braces and clear aligners? Read our comprehensive comparison of cost, appearance, comfort, and treatment time to find your perfect fit."
 pubDate: 2026-06-18
-heroImage: "/treatments/xray.jpg"
+heroImage: "/blog/clear-aligners-vs-braces.jpg"
 author: "Dr. Radhika"
 category: "Orthodontics"
 tags:
