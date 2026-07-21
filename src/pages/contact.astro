@@ -215,35 +215,77 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                 <textarea id="form-message" class="textarea textarea-bordered h-24" placeholder="Tell us about your concern or specify preferred days and times..."></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary text-white w-full font-bold shadow-md shadow-teal-500/10 hover:shadow-teal-500/25">
-                Send Appointment Request
+              <button type="submit" id="form-submit-btn" class="btn btn-primary text-white w-full font-bold shadow-md shadow-teal-500/10 hover:shadow-teal-500/25 flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.151 4.201 4.264-1.117z"/>
+                </svg>
+                Book via WhatsApp & Email Request
               </button>
 
               <div id="form-success" class="hidden alert alert-success text-sm flex gap-2 rounded-xl mt-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0" /></svg>
-                <span>Thank you! Your request has been sent. We will contact you shortly to confirm your booking.</span>
+                <span>Thank you! Your appointment request has been sent to our email and WhatsApp. We will contact you shortly to confirm.</span>
               </div>
             </form>
 
             <script>
-              // Safe client-side submission mock logic
-              document.addEventListener('astro:page-load', () => {
+              const initForm = () => {
                 const form = document.getElementById('contact-form') as HTMLFormElement | null;
                 const successAlert = document.getElementById('form-success');
-                if (form) {
-                  form.addEventListener('submit', (e) => {
+                
+                if (form && !form.dataset.listener) {
+                  form.dataset.listener = 'true';
+                  form.addEventListener('submit', async (e) => {
                     e.preventDefault();
                     
-                    // Simple WhatsApp redirect option or feedback alert
+                    const name = (document.getElementById('form-name') as HTMLInputElement)?.value || '';
+                    const phone = (document.getElementById('form-phone') as HTMLInputElement)?.value || '';
+                    const email = (document.getElementById('form-email') as HTMLInputElement)?.value || '';
+                    const treatment = (document.getElementById('form-treatment') as HTMLSelectElement)?.value || 'General Checkup';
+                    const message = (document.getElementById('form-message') as HTMLTextAreaElement)?.value || '';
+
+                    // 1. Asynchronous Email Backup via FormSubmit API
+                    try {
+                      fetch('https://formsubmit.co/ajax/onesmile.dentalcare@gmail.com', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                          'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                          _subject: `New Appointment Request from ${name}`,
+                          Name: name,
+                          Phone: phone,
+                          Email: email || 'Not provided',
+                          Treatment: treatment,
+                          Message: message || 'None'
+                        })
+                      }).catch(() => {});
+                    } catch (err) {}
+
+                    // 2. Pre-filled WhatsApp Redirect
+                    let waText = `Hello One Smile Dental Care! I would like to book an appointment.\n\n` +
+                      `*Name:* ${name}\n` +
+                      `*Phone:* ${phone}\n` +
+                      (email ? `*Email:* ${email}\n` : '') +
+                      `*Treatment:* ${treatment}\n` +
+                      (message ? `*Message:* ${message}` : '');
+
+                    const waUrl = `https://wa.me/918400021200?text=${encodeURIComponent(waText)}`;
+                    window.open(waUrl, '_blank');
+
+                    // 3. UI Success Feedback
                     if (successAlert) {
                       successAlert.classList.remove('hidden');
                       form.reset();
-                      // Smooth scroll down to success message
                       successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     }
                   });
                 }
-              });
+              };
+
+              document.addEventListener('DOMContentLoaded', initForm);
+              document.addEventListener('astro:page-load', initForm);
             </script>
           </div>
         </div>
