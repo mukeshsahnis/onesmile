@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://onesmiledentalcare.com/sitemap-index.xml
