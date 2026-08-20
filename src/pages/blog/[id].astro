@@ -49,6 +49,20 @@ const blogSchema = {
     "@id": Astro.url.href
   }
 };
+
+// Dynamic FAQ Schema Markup for SEO
+const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": entry.data.faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+} : null;
 ---
 
 <Layout
@@ -58,6 +72,7 @@ const blogSchema = {
 >
   {/* Inject Blog Schema */}
   <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <article class="bg-stone-50 min-h-screen">
     <nav class="bg-white border-b border-stone-200 py-8 animate-[fadeIn_0.5s_ease_forwards]" aria-label="Breadcrumb">
@@ -111,6 +126,26 @@ const blogSchema = {
           <div class="prose prose-stone max-w-none prose-headings:text-stone-900 prose-p:text-stone-700 prose-strong:text-stone-900 leading-relaxed">
             <Content />
           </div>
+
+          {/* FAQs section */}
+          {entry.data.faqs && entry.data.faqs.length > 0 && (
+            <div class="border-t border-stone-200 pt-10 mt-6">
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 mb-6">Frequently Asked Questions</h2>
+              <div class="flex flex-col gap-3">
+                {entry.data.faqs.map((faq, idx) => (
+                  <div class="collapse collapse-plus bg-white border border-stone-200 rounded-xl">
+                    <input type="radio" name="faq-accordion" checked={idx === 0 ? "checked" : undefined} />
+                    <div class="collapse-title text-base font-bold text-stone-900 pr-12">
+                      {faq.question}
+                    </div>
+                    <div class="collapse-content text-sm text-stone-600 leading-relaxed">
+                      <p>{faq.answer}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Tags */}
           {entry.data.tags && entry.data.tags.length > 0 && (

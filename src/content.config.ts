@@ -13,6 +13,10 @@ const blog = defineCollection({
     category: z.string().default("General Dentistry"),
     tags: z.array(z.string()).default([]),
     relatedTreatments: z.array(z.string()).default([]), // IDs of related treatments
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string()
+    })).default([]),
   })
 });
 
