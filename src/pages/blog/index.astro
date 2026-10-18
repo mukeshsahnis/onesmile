@@ -56,7 +56,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                 <span>{new Date(featuredPost.data.pubDate).toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'})}</span>
               </div>
               <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 group-hover:text-teal-600 transition-colors leading-tight">
-                <a href={`${base}blog/${featuredPost.id}`}>
+                <a href={`${base}blog/${featuredPost.id}/`}>
                   {featuredPost.data.title}
                 </a>
               </h2>
@@ -73,7 +73,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                 </div>
               </div>
               <div class="mt-4">
-                <a href={`${base}blog/${featuredPost.id}`} class="btn btn-primary text-white text-sm font-bold">
+                <a href={`${base}blog/${featuredPost.id}/`} class="btn btn-primary text-white text-sm font-bold">
                   Read Full Guide
                 </a>
               </div>
@@ -104,7 +104,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                     {new Date(post.data.pubDate).toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'})}
                   </span>
                   <h3 class="text-lg font-bold text-stone-900 mb-2 group-hover:text-teal-600 transition-colors line-clamp-2">
-                    <a href={`${base}blog/${post.id}`}>
+                    <a href={`${base}blog/${post.id}/`}>
                       {post.data.title}
                     </a>
                   </h3>
@@ -116,7 +116,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
               
               <div class="p-6 pt-0 border-t border-stone-100 mt-4 flex items-center justify-between">
                 <span class="text-xs font-bold text-stone-500">By {post.data.author}</span>
-                <a href={`${base}blog/${post.id}`} class="inline-flex items-center gap-1.5 text-xs font-bold text-teal-600 hover:text-teal-800 transition-colors group/link">
+                <a href={`${base}blog/${post.id}/`} class="inline-flex items-center gap-1.5 text-xs font-bold text-teal-600 hover:text-teal-800 transition-colors group/link">
                   Read article
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-200 group-hover/link:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

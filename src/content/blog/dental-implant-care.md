@@ -41,6 +41,6 @@ Smoking is one of the most common causes of dental implant failure. Nicotine res
 
 ## 4. Visit Your Dentist Every 6 Months
 
-Even with perfect home care, professional cleanings are essential. During your [Preventive Care](/treatments/preventive-care) visits at One Smile Dental Care, we use specialized tools made of plastic or resin (rather than metal) to clean around the titanium implants. This ensures we remove calcified tartar without scratching the implant structure.
+Even with perfect home care, professional cleanings are essential. During your [Preventive Care](/treatments/preventive-care/) visits at One Smile Dental Care, we use specialized tools made of plastic or resin (rather than metal) to clean around the titanium implants. This ensures we remove calcified tartar without scratching the implant structure.
 
 We will also take periodic digital X-rays to monitor the bone levels around your implant, ensuring it remains securely anchored.

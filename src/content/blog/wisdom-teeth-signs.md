@@ -36,7 +36,7 @@ Because wisdom teeth are located at the very back of the mouth, they are notorio
 
 ## 4. Damage or Pain in Neighboring Teeth
 
-If a wisdom tooth grows horizontally or at an angle, it pushes directly against the roots of your second molars. This constant pressure can cause root resorption, damage the adjacent teeth, and lead to cavities that are difficult to treat. In severe cases, both the wisdom tooth and the damaged second molar may require [Extraction](/treatments/extraction).
+If a wisdom tooth grows horizontally or at an angle, it pushes directly against the roots of your second molars. This constant pressure can cause root resorption, damage the adjacent teeth, and lead to cavities that are difficult to treat. In severe cases, both the wisdom tooth and the damaged second molar may require [Extraction](/treatments/extraction/).
 
 ## 5. Sinus Pain, Pressure, or Congestion
 

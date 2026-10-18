@@ -8,6 +8,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: "https://onesmiledentalcare.com",
   base: "/",
+  trailingSlash: "always",
   vite: {
     plugins: [tailwindcss()]
   },

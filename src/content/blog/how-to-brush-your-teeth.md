@@ -98,7 +98,7 @@ While proper brushing at home is vital, it cannot remove hardened **dental tarta
 ---
 
 ## Related Dental Services & Treatments
-* [Preventive Care & Cleaning](/treatments/preventive-care) — Keep your teeth plaque-free with routine scaling and checkups.
-* [Teeth Whitening](/treatments/teeth-whitening) — Professional clinic whitening for a brilliant, sparkling smile.
-* [Gum Treatment](/treatments/gums-treatment) — Specialized care for bleeding gums, gingivitis, and periodontitis.
-* [Book an Appointment](/contact) — Visit Dr. Radhika Rastogi at One Smile Dental Care, Gomti Nagar, Lucknow.
+* [Preventive Care & Cleaning](/treatments/preventive-care/) — Keep your teeth plaque-free with routine scaling and checkups.
+* [Teeth Whitening](/treatments/teeth-whitening/) — Professional clinic whitening for a brilliant, sparkling smile.
+* [Gum Treatment](/treatments/gums-treatment/) — Specialized care for bleeding gums, gingivitis, and periodontitis.
+* [Book an Appointment](/contact/) — Visit Dr. Radhika Rastogi at One Smile Dental Care, Gomti Nagar, Lucknow.

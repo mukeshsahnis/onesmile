@@ -18,11 +18,11 @@ const {
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const navLinks = [
-  { name: "About Us", href: `${base}about` },
-  { name: "Treatments", href: `${base}treatments` },
-  { name: "Gallery", href: `${base}gallery` },
-  { name: "Blog", href: `${base}blog` },
-  { name: "Contact Us", href: `${base}contact` }
+  { name: "About Us", href: `${base}about/` },
+  { name: "Treatments", href: `${base}treatments/` },
+  { name: "Gallery", href: `${base}gallery/` },
+  { name: "Blog", href: `${base}blog/` },
+  { name: "Contact Us", href: `${base}contact/` }
 ];
 
 const phone1 = "+91-8400021200";
@@ -223,11 +223,11 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
           <div>
             <h3 class="text-white text-base font-semibold uppercase tracking-wider mb-6">Quick Links</h3>
             <ul class="flex flex-col gap-4 text-sm">
-              <li><a href={`${base}about`} class="hover:text-teal-400 transition-colors">About Our Clinic</a></li>
-              <li><a href={`${base}treatments`} class="hover:text-teal-400 transition-colors">Dental Treatments</a></li>
-              <li><a href={`${base}gallery`} class="hover:text-teal-400 transition-colors">Clinic Gallery</a></li>
-              <li><a href={`${base}blog`} class="hover:text-teal-400 transition-colors">Dental Blog & Tips</a></li>
-              <li><a href={`${base}contact`} class="hover:text-teal-400 transition-colors">Get In Touch</a></li>
+              <li><a href={`${base}about/`} class="hover:text-teal-400 transition-colors">About Our Clinic</a></li>
+              <li><a href={`${base}treatments/`} class="hover:text-teal-400 transition-colors">Dental Treatments</a></li>
+              <li><a href={`${base}gallery/`} class="hover:text-teal-400 transition-colors">Clinic Gallery</a></li>
+              <li><a href={`${base}blog/`} class="hover:text-teal-400 transition-colors">Dental Blog & Tips</a></li>
+              <li><a href={`${base}contact/`} class="hover:text-teal-400 transition-colors">Get In Touch</a></li>
             </ul>
           </div>
 

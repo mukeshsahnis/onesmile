@@ -134,7 +134,7 @@ const googleReviews = [
         <a href="https://wa.me/918400021200" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg text-base font-bold shadow-lg shadow-teal-500/20 hover:scale-105 transition-transform duration-300">
           Book Appointment
         </a>
-        <a href={`${base}treatments`} class="btn btn-outline btn-lg text-white hover:bg-white hover:text-stone-950 border-white/60 hover:border-white transition-all duration-300">
+        <a href={`${base}treatments/`} class="btn btn-outline btn-lg text-white hover:bg-white hover:text-stone-950 border-white/60 hover:border-white transition-all duration-300">
           Explore Treatments
         </a>
       </div>
@@ -233,7 +233,7 @@ const googleReviews = [
             </a>
           </div>
           <div class="flex flex-wrap gap-4 pt-2">
-            <a href={`${base}about`} class="btn btn-primary text-white">Know Your Dentist</a>
+            <a href={`${base}about/`} class="btn btn-primary text-white">Know Your Dentist</a>
             <a href="https://wa.me/918400021200" target="_blank" rel="noopener noreferrer" class="btn btn-outline border-stone-300">Ask a Question</a>
           </div>
         </div>
@@ -250,12 +250,12 @@ const googleReviews = [
           <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mt-3">Care for the smiles that matter most.</h2>
           <p class="text-lg text-stone-600 mt-4">Explore a focused selection of our most requested treatments. Your consultation always begins with a careful diagnosis and a plan tailored to you.</p>
         </div>
-        <a href={`${base}treatments`} class="btn btn-primary btn-outline font-semibold shrink-0">Explore All Treatments</a>
+        <a href={`${base}treatments/`} class="btn btn-primary btn-outline font-semibold shrink-0">Explore All Treatments</a>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {featuredTreatments.map(treatment => (
-          <a href={`${base}treatments/${treatment.id}`} class="group overflow-hidden bg-white rounded-2xl border border-stone-200 hover:shadow-xl hover:border-teal-500/30 transition-all duration-300">
+          <a href={`${base}treatments/${treatment.id}/`} class="group overflow-hidden bg-white rounded-2xl border border-stone-200 hover:shadow-xl hover:border-teal-500/30 transition-all duration-300">
             <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
               <img
                 src={treatment.data.image.startsWith('/') ? `${base}${treatment.data.image.slice(1)}` : treatment.data.image}

@@ -85,7 +85,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
             </svg>
-            <a href={`${base}blog`} class="hover:text-teal-600 transition-colors">Blog</a>
+            <a href={`${base}blog/`} class="hover:text-teal-600 transition-colors">Blog</a>
           </li>
           <li class="flex items-center gap-2 text-stone-400">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -169,7 +169,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
               <h3 class="font-bold text-stone-900 text-base mb-4 border-b border-stone-100 pb-2">Related Treatments</h3>
               <div class="flex flex-col gap-4">
                 {relatedTreatments.map(relTreatment => (
-                  <a href={`${base}treatments/${relTreatment.id}`} class="group flex items-center gap-3 focus:outline-none">
+                  <a href={`${base}treatments/${relTreatment.id}/`} class="group flex items-center gap-3 focus:outline-none">
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0">
                       <img
                         src={relTreatment.data.image.startsWith('/') ? `${base}${relTreatment.data.image.slice(1)}` : relTreatment.data.image}

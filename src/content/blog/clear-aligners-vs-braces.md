@@ -48,4 +48,4 @@ Let’s look at a detailed comparison to help you make an informed decision.
 
 ### Making the Choice
 
-At One Smile Dental Care, we analyze your digital impressions and dental structure during your [Braces & Aligners](/treatments/braces-and-aligners) consultation to determine if you are a candidate for clear aligners. We will guide you toward the treatment that fits your clinical needs, budget, and lifestyle.
+At One Smile Dental Care, we analyze your digital impressions and dental structure during your [Braces & Aligners](/treatments/braces-and-aligners/) consultation to determine if you are a candidate for clear aligners. We will guide you toward the treatment that fits your clinical needs, budget, and lifestyle.

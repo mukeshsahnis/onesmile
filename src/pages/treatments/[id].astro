@@ -63,7 +63,7 @@ const faqSchema = {
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
             </svg>
-            <a href={`${base}treatments`} class="hover:text-teal-600 transition-colors">Treatments</a>
+            <a href={`${base}treatments/`} class="hover:text-teal-600 transition-colors">Treatments</a>
           </li>
           <li class="flex items-center gap-2 text-stone-400">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -165,7 +165,7 @@ const faqSchema = {
               <h3 class="font-bold text-stone-900 text-lg mb-4 border-b border-stone-100 pb-2">Related Articles</h3>
               <div class="flex flex-col gap-4">
                 {relatedBlogPosts.map(post => (
-                  <a href={`${base}blog/${post.id}`} class="group flex flex-col gap-1.5 focus:outline-none">
+                  <a href={`${base}blog/${post.id}/`} class="group flex flex-col gap-1.5 focus:outline-none">
                     <h4 class="text-sm font-bold text-stone-900 group-hover:text-teal-600 transition-colors leading-snug">
                       {post.data.title}
                     </h4>
@@ -184,7 +184,7 @@ const faqSchema = {
               <h3 class="font-bold text-stone-900 text-lg mb-4 border-b border-stone-100 pb-2">Related Treatments</h3>
               <div class="flex flex-col gap-4">
                 {relatedTreatments.map(relTreatment => (
-                  <a href={`${base}treatments/${relTreatment.id}`} class="group flex items-center gap-3 focus:outline-none">
+                  <a href={`${base}treatments/${relTreatment.id}/`} class="group flex items-center gap-3 focus:outline-none">
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0">
                       <img
                         src={relTreatment.data.image.startsWith('/') ? `${base}${relTreatment.data.image.slice(1)}` : relTreatment.data.image}
