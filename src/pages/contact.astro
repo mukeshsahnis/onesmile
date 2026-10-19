@@ -1,65 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Dentist / LocalBusiness Schema for local SEO
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "Dentist",
-  "name": "One Smile Dental Care",
-  "image": "https://onesmiledentalcare.com/logos/logo.png",
-  "@id": "https://onesmiledentalcare.com/#dentist",
-  "url": "https://onesmiledentalcare.com/",
-  "telephone": "+918400021200",
-  "email": "onesmiledentalcare@gmail.com",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "5/437, near Dayal Paradise, Vikas Khand, Gomti Nagar",
-    "addressLocality": "Lucknow",
-    "addressRegion": "Uttar Pradesh",
-    "postalCode": "226010",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "26.902636",
-    "longitude": "80.970228"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "10:00",
-      "closes": "20:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "10:00",
-      "closes": "13:00"
-    }
-  ],
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=100069537376974",
-    "https://www.instagram.com/onesmile_dentalcare/"
-  ]
-};
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <Layout 
-  title="Contact Us & Book Appointment | One Smile Dental Care"
-  description="Get in touch with One Smile Dental Care. View our working hours, call us at +91-8400021200, find directions, or send an appointment request."
+  title="Contact & Book a Dentist in Gomti Nagar, Lucknow | One Smile Dental Care"
+  description="Book an appointment at One Smile Dental Care, Vikas Khand, Gomti Nagar, Lucknow. View working hours, call us at +91-8400021200, find directions, or send an appointment request."
 >
-  {/* Inject Local Business Schema */}
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-
   <nav class="bg-white border-b border-stone-200 py-8" aria-label="Breadcrumb">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-2">
       <ol class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-stone-500">

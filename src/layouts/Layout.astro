@@ -10,8 +10,8 @@ interface Props {
 }
 
 const {
-  title = "One Smile Dental Care | Premium Dental Clinic & Implant Centre",
-  description = "Experience premium dental care at One Smile Dental Care. Providing world-class Dental Implants, Root Canal Treatments, Braces, Smile Makeovers, and Kids Dentistry with state-of-the-art technology.",
+  title = "Dentist in Gomti Nagar, Lucknow | One Smile Dental Care",
+  description = "One Smile Dental Care is a specialist-led dental clinic in Gomti Nagar, Lucknow. Dental implants, painless root canal treatment, braces & aligners, smile makeovers and kids dentistry by Dr. Radhika Rastogi.",
   image = "/treatments/treating-patient.jpg",
   canonicalURL = Astro.url.href,
 } = Astro.props;
@@ -32,6 +32,65 @@ const addressLink = "https://www.google.com/maps?cid=11247058903890459605&g_mp=C
 const whatsappNo = "+918400021200";
 const facebookLink = "https://www.facebook.com/profile.php?id=100069537376974";
 const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
+
+// Dentist / LocalBusiness Schema for local SEO, emitted on every page
+const dentistSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "@id": "https://onesmiledentalcare.com/#dentist",
+  "name": "One Smile Dental Care",
+  "description": "Dentist and dental clinic in Gomti Nagar, Lucknow led by Dr. Radhika Rastogi (MDS, Endodontics & Aesthetic Dentistry).",
+  "image": "https://onesmiledentalcare.com/treatments/treating-patient.jpg",
+  "logo": "https://onesmiledentalcare.com/logos/logo.png",
+  "url": "https://onesmiledentalcare.com/",
+  "telephone": "+918400021200",
+  "email": email,
+  "priceRange": "$$",
+  "hasMap": "https://www.google.com/maps?cid=11247058903890459605",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5/437, near Dayal Paradise, Vikas Khand, Gomti Nagar",
+    "addressLocality": "Lucknow",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "226010",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "26.902636",
+    "longitude": "80.970228"
+  },
+  "areaServed": [
+    { "@type": "Place", "name": "Gomti Nagar, Lucknow" },
+    { "@type": "City", "name": "Lucknow" }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "17:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "13:00"
+    }
+  ],
+  "employee": {
+    "@type": "Person",
+    "name": "Dr. Radhika Rastogi",
+    "jobTitle": "Dentist, MDS (Endodontics & Aesthetic Dentistry)"
+  },
+  "sameAs": [facebookLink, instagramLink]
+};
 ---
 
 <!doctype html>
@@ -61,6 +120,8 @@ const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url.origin).toString()} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(dentistSchema)} />
 
     <!-- Google tag (gtag.js) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18361993489"></script>
