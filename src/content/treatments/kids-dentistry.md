@@ -1,7 +1,7 @@
 ---
 title: "Pediatric Dentistry (Kids Care)"
 description: "Introduce your children to stress-free, friendly pediatric dentistry at One Smile Dental Care. Providing dental sealants, fluoride therapy, and early orthodontic evaluations."
-image: "/treatments/pediatric-dentistry.jpg"
+image: "../../assets/treatments/pediatric-dentistry.jpg"
 summary: "Help your child build healthy dental habits for life. Our kid-friendly environment ensures stress-free cavity prevention, sealants, and gentle care."
 order: 5
 benefits:
@@ -23,7 +23,7 @@ relatedTreatments:
   - "braces-and-aligners"
 ---
 
-# Pediatric & Kids Dentistry
+## Pediatric & Kids Dentistry
 
 At One Smile Dental Care, we love helping children develop beautiful, healthy smiles. Our team understands that a child's early experiences at the dental clinic shape their attitude toward oral health for the rest of their life. That’s why we have created a warm, friendly, and completely non-threatening environment for our youngest patients.
 

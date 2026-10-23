@@ -1,7 +1,7 @@
 ---
 title: "Braces & Clear Aligners"
 description: "Straighten your teeth and correct your bite with custom orthodontic treatments, including clear aligners and ceramic braces, at One Smile Dental Care."
-image: "/treatments/xray.jpg"
+image: "../../assets/treatments/xray.jpg"
 summary: "Get the straight smile you have always wanted. Choose from virtually invisible clear aligners, aesthetic ceramic braces, or traditional metal braces."
 order: 8
 benefits:
@@ -24,7 +24,7 @@ relatedTreatments:
   - "kids-dentistry"
 ---
 
-# Braces & Clear Aligners at One Smile Dental Care
+## Braces & Clear Aligners at One Smile Dental Care
 
 A straight, well-aligned smile is not only beautiful—it is also essential for healthy teeth, functional chewing, and overall wellness. At One Smile Dental Care, we provide comprehensive orthodontic care for children, teens, and adults. Whether you want traditional metal braces, discreet ceramic braces, or modern clear aligners, we design custom treatment plans to help you achieve your goals.
 

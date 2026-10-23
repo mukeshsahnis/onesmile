@@ -113,3 +113,37 @@ This project is proprietary and built specifically for One Smile Dental Care. Al
 
 ---
 *Last deployed: July 2026*
+
+## Image and structured-data checks
+
+Website photos are imported from `src/assets/` and rendered with Astro's native
+`Image` component from `astro:assets`. Astro generates responsive WebP variants,
+dimensions and `srcset` during the normal build. Hero images explicitly use eager
+loading; other images use Astro's lazy-loading default. No custom component,
+image-generation script or manifest is required.
+
+Treatment and blog frontmatter uses relative paths such as
+`image: "../../assets/treatments/veneers.jpg"`. The content schemas use Astro's
+`image()` helper to validate and load image metadata. Fixed page images use
+ordinary file imports. Remote reviewer avatars remain regular `<img>` elements
+with explicit dimensions.
+
+Existing files in `public/` are retained as compatibility copies for historical
+image links, the favicon and social-sharing URLs. They are not the source of
+rendered photo variants. Add new website photos to `src/assets/`; add a public
+copy only when a stable external URL is needed. If replacing an existing photo,
+update its public compatibility copy too when appropriate.
+
+See [Astro's image documentation](https://docs.astro.build/en/guides/images/).
+
+SEO checks now verify one H1 per canonical page, breadcrumb destinations, image
+dimensions and generated image files as well as redirects and canonicals.
+The public Google Maps listing was checked on October 23, 2026: its hours,
+phone, website and booking link match the site. Dentist schema coordinates
+now match the listing's place coordinates (26.842879, 80.9941769).
+
+Before expanding clinical treatment guidance, have the dentist confirm the
+content and any costs, qualifications or review dates. Do not label unreviewed
+content as clinically reviewed. Conversion tracking still requires choosing
+and configuring the destination analytics/conversion actions; button clicks
+must not be reported as completed appointments.

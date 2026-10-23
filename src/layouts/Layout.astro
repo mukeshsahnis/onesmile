@@ -1,12 +1,16 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import logoImage from '../assets/logos/logo.png';
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
+  image?: string | ImageMetadata;
   canonicalURL?: string;
+  breadcrumbs?: { name: string; path: string }[];
 }
 
 const {
@@ -14,7 +18,17 @@ const {
   description = "One Smile Dental Care is a specialist-led dental clinic in Gomti Nagar, Lucknow. Dental implants, painless root canal treatment, braces & aligners, smile makeovers and kids dentistry by Dr. Radhika Rastogi.",
   image = "/treatments/treating-patient.jpg",
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+  breadcrumbs = [],
 } = Astro.props;
+
+const breadcrumbSchema = breadcrumbs.length ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [{ name: 'Home', path: '/' }, ...breadcrumbs].map((crumb, index) => ({
+    '@type': 'ListItem', position: index + 1, name: crumb.name,
+    item: new URL(crumb.path, Astro.site).href,
+  })),
+} : null;
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const navLinks = [
@@ -57,8 +71,8 @@ const dentistSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "26.902636",
-    "longitude": "80.970228"
+    "latitude": "26.842879",
+    "longitude": "80.9941769"
   },
   "areaServed": [
     { "@type": "Place", "name": "Gomti Nagar, Lucknow" },
@@ -112,16 +126,17 @@ const dentistSchema = {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url.origin).toString()} />
+    <meta property="og:image" content={new URL(typeof image === "string" ? image : image.src, Astro.site).toString()} />
 
     {/* Twitter */}
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url.origin).toString()} />
+    <meta property="twitter:image" content={new URL(typeof image === "string" ? image : image.src, Astro.site).toString()} />
 
     <script type="application/ld+json" set:html={JSON.stringify(dentistSchema)} />
+    {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
     <!-- Google tag (gtag.js) -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18361993489"></script>
@@ -151,11 +166,11 @@ const dentistSchema = {
         <div class="flex items-center justify-between h-20">
           {/* Logo Brand area */}
           <a href={base} class="flex items-center gap-3 group focus:outline-none">
-            <img
-              src={`${base}logos/logo.png`}
+            <Image
+              src={logoImage} loading="eager" sizes="160px"
               alt="One Smile Dental Care Logo"
               class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            />
+             format="webp" widths={[160, 480, 960, 1440]} />
             <span class="sr-only">One Smile Dental Care</span>
           </a>
 
@@ -234,11 +249,11 @@ const dentistSchema = {
           {/* Brand Col */}
           <div class="flex flex-col gap-6">
             <a href={base} class="flex items-center gap-3 group focus:outline-none">
-              <img
-                src={`${base}logos/logo.png`}
+              <Image
+                src={logoImage} loading="eager" sizes="160px"
                 alt="One Smile Dental Care"
                 class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              />
+               format="webp" widths={[160, 480, 960, 1440]} />
             </a>
             <p class="text-sm text-stone-400 leading-relaxed">
               Your home for advanced, gentle dental care. We specialize in implants, cosmetic smile design, and family dentistry in a comfortable, sterile environment.

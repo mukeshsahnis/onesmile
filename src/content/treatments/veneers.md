@@ -1,7 +1,7 @@
 ---
 title: "Porcelain & Composite Veneers"
 description: "Get a flawless, Hollywood smile with custom porcelain and composite veneers at One Smile Dental Care. Correct chips, gaps, and severe stains."
-image: "/treatments/veneers.jpg"
+image: "../../assets/treatments/veneers.jpg"
 summary: "Wafer-thin, custom-made shells bonded to the front of your teeth. Correct chips, gaps, alignment issues, and severe discoloration for a perfect smile."
 order: 14
 benefits:
@@ -24,7 +24,7 @@ relatedTreatments:
   - "teeth-whitening"
 ---
 
-# Porcelain & Composite Veneers
+## Porcelain & Composite Veneers
 
 If you are looking for a dramatic yet natural-looking smile transformation, **porcelain or composite veneers** are one of the most effective treatments available. Veneers are wafer-thin, custom-made shells designed to cover the front surface of your teeth, instantly concealing cosmetic imperfections.
 

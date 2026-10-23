@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -40,7 +42,7 @@ const schema = {
 };
 ---
 
-<Layout
+<Layout breadcrumbs={[{ name: "Treatments", path: "/treatments/" }]}
   title="Dental Treatments in Gomti Nagar, Lucknow | One Smile Dental Care"
   description="Explore our full list of 14 premium dental treatments including Dental Implants, Root Canal Treatments, Clear Aligners, Teeth Whitening, and Gum Treatments."
 >
@@ -71,12 +73,12 @@ const schema = {
           <div class="group relative flex flex-col justify-between overflow-hidden bg-white rounded-2xl border border-stone-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-teal-500/20">
             <div>
               <div class="aspect-video w-full overflow-hidden bg-stone-100 relative">
-                <img
-                  src={treatment.data.image.startsWith('/') ? `${base}${treatment.data.image.slice(1)}` : treatment.data.image}
-                  alt={treatment.data.title}
+                <Image
+                  src={treatment.data.image}
+                  alt={treatment.data.title} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
-                />
+                 format="webp" widths={[160, 480, 960, 1440]} />
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-teal-600 transition-colors">

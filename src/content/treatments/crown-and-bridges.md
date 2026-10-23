@@ -1,7 +1,7 @@
 ---
 title: "Dental Crowns & Bridges"
 description: "Restore damaged or missing teeth with custom-crafted dental crowns and bridges at One Smile Dental Care. Made from premium, long-lasting porcelain and ceramic."
-image: "/treatments/crown-and-bridges.jpg"
+image: "../../assets/treatments/crown-and-bridges.jpg"
 summary: "Protect cracked teeth and fill gaps in your smile. Our custom-designed crowns and bridges restore shape, size, and strength to your teeth."
 order: 2
 benefits:
@@ -24,7 +24,7 @@ relatedTreatments:
   - "dentures"
 ---
 
-# Precision Crowns & Bridges at One Smile Dental Care
+## Precision Crowns & Bridges at One Smile Dental Care
 
 When teeth are weakened by decay, fractures, or root canal therapy, or when teeth are missing altogether, **crowns and bridges** are the go-to solutions to restore your smile’s function and beauty. At One Smile Dental Care, we use high-quality, biocompatible materials like Zirconia, E-Max, and porcelain-fused-to-metal (PFM) to create restorations that match your natural smile seamlessly.
 

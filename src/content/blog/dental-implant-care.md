@@ -2,8 +2,8 @@
 title: "How to Care for Your Dental Implants: A Complete Guide"
 description: "Learn how to care for your dental implants to ensure they last a lifetime. Discover brushing tips, flossing techniques, and regular checkup recommendations."
 pubDate: 2026-07-02
-heroImage: "/blog/dental-implant-care.jpg"
-author: "Dr. Radhika"
+heroImage: "../../assets/blog/dental-implant-care.jpg"
+author: "Dr. Radhika Rastogi"
 category: "Dental Implants"
 tags:
   - "Dental Implants"
@@ -14,7 +14,7 @@ relatedTreatments:
   - "preventive-care"
 ---
 
-# How to Care for Your Dental Implants: A Complete Guide
+## How to Care for Your Dental Implants: A Complete Guide
 
 Dental implants are widely considered the gold standard for replacing missing teeth. They look, feel, and function just like natural teeth. One of the greatest benefits of dental implants is their longevity; with proper care, they can last a lifetime.
 

@@ -2,7 +2,7 @@
 title: "How to Brush Your Teeth Properly: Step-by-Step Guide & Expert Tips"
 description: "Master the correct brushing technique to protect your teeth and gums. Learn step-by-step methods, common mistakes to avoid, and answers to top dental FAQs."
 pubDate: 2026-07-21
-heroImage: "/treatments/treating-patient.jpg"
+heroImage: "../../assets/treatments/treating-patient.jpg"
 author: "Dr. Radhika Rastogi"
 category: "Preventive Care"
 tags:

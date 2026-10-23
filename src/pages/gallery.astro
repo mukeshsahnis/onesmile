@@ -1,32 +1,49 @@
 ---
+import { Image } from 'astro:assets';
+import treatingPatientImage from '../assets/treatments/treating-patient.jpg';
+import sterImage from '../assets/treatments/ster.jpg';
+import wtarepurifImage from '../assets/treatments/wtarepurif.webp';
+import xrayImage from '../assets/treatments/xray.jpg';
+import dentalImage from '../assets/treatments/dental.jpg';
+import toolsImage from '../assets/treatments/tools.jpg';
+import patient1Image from '../assets/patients/patient1.jpg';
+import patient2Image from '../assets/patients/patient2.jpg';
+import patient3Image from '../assets/patients/patient3.jpg';
+import patient4Image from '../assets/patients/patient4.jpg';
+import patient5Image from '../assets/patients/patient5.jpg';
+import patient6Image from '../assets/patients/patient6.jpg';
+import patient7Image from '../assets/patients/patient7.jpg';
+import patient8Image from '../assets/patients/patient8.jpg';
+import patient9Image from '../assets/patients/patient9.jpg';
+import patient10Image from '../assets/patients/patient10.jpg';
 import Layout from '../layouts/Layout.astro';
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 const clinicImages = [
-  { src: "/treatments/treating-patient.jpg", title: "Patient Treatment Studio", category: "Facility" },
-  { src: "/treatments/ster.jpg", title: "Class-B Autoclave Sterilizer", category: "Sterilization" },
-  { src: "/treatments/wtarepurif.webp", title: "Closed-Loop Pure Water Unit", category: "Technology" },
-  { src: "/treatments/xray.jpg", title: "Digital X-Ray Diagnoses", category: "Technology" },
-  { src: "/treatments/dental.jpg", title: "Dental Operatory", category: "Facility" },
-  { src: "/treatments/tools.jpg", title: "Endodontic Rotary Instruments", category: "Equipment" }
-].map(img => ({ ...img, src: `${base}${img.src.replace(/^\//, '')}` }));
+  { src: treatingPatientImage, title: "Patient Treatment Studio", category: "Facility" },
+  { src: sterImage, title: "Class-B Autoclave Sterilizer", category: "Sterilization" },
+  { src: wtarepurifImage, title: "Closed-Loop Pure Water Unit", category: "Technology" },
+  { src: xrayImage, title: "Digital X-Ray Diagnoses", category: "Technology" },
+  { src: dentalImage, title: "Dental Operatory", category: "Facility" },
+  { src: toolsImage, title: "Endodontic Rotary Instruments", category: "Equipment" }
+];
 
 const patientPhotos = [
-  "/patients/patient1.jpg",
-  "/patients/patient2.jpg",
-  "/patients/patient3.jpg",
-  "/patients/patient4.jpg",
-  "/patients/patient5.jpg",
-  "/patients/patient6.jpg",
-  "/patients/patient7.jpg",
-  "/patients/patient8.jpg",
-  "/patients/patient9.jpg",
-  "/patients/patient10.jpg"
-].map(path => `${base}${path.replace(/^\//, '')}`);
+  patient1Image,
+  patient2Image,
+  patient3Image,
+  patient4Image,
+  patient5Image,
+  patient6Image,
+  patient7Image,
+  patient8Image,
+  patient9Image,
+  patient10Image
+];
 ---
 
-<Layout
+<Layout breadcrumbs={[{ name: "Gallery", path: "/gallery/" }]}
   title="Clinic Gallery | One Smile Dental Care"
   description="Take a visual tour of One Smile Dental Care. See our sterile operatory, advanced dental equipment, water purification setups, and beautiful patient results."
 >
@@ -62,12 +79,12 @@ const patientPhotos = [
         {clinicImages.map(img => (
           <div class="group relative overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md">
             <div class="aspect-video w-full overflow-hidden bg-stone-100 relative">
-              <img
+              <Image
                 src={img.src}
                 alt={img.title}
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-103"
                 loading="lazy"
-              />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
               <div class="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-teal-400 border border-stone-850">
                 {img.category}
               </div>
@@ -95,12 +112,12 @@ const patientPhotos = [
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {patientPhotos.map((photo, idx) => (
           <div class="group relative overflow-hidden rounded-xl border border-stone-200 shadow-sm aspect-square bg-white">
-            <img
+            <Image
               src={photo}
               alt={`One Smile patient transformation ${idx + 1}`}
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
-            />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
             <div class="absolute inset-0 bg-gradient-to-t from-stone-950/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-white font-semibold">Smile Design #{idx + 1}</span>
             </div>

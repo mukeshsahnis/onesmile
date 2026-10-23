@@ -1,7 +1,7 @@
 ---
 title: "Complete & Partial Dentures"
 description: "Restore your bite and confidence with custom-crafted, comfortable complete and partial dentures at One Smile Dental Care. Learn about implant-supported dentures."
-image: "/treatments/dentures.jpg"
+image: "../../assets/treatments/dentures.jpg"
 summary: "Replace multiple or all missing teeth. Choose from lightweight, flexible partial dentures or secure, implant-supported complete dentures."
 order: 12
 benefits:
@@ -24,7 +24,7 @@ relatedTreatments:
   - "crown-and-bridges"
 ---
 
-# Premium Dentures at One Smile Dental Care
+## Premium Dentures at One Smile Dental Care
 
 Tooth loss can significantly affect your diet, speech, and self-confidence. At One Smile Dental Care, we craft **custom dentures** that are designed to fit the unique shape of your gums, restoring a natural look and comfortable chewing function.
 

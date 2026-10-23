@@ -1,7 +1,7 @@
 ---
 title: "Advanced Dental Implants"
 description: "Restore your missing teeth with premium, permanent dental implants at One Smile Dental Care. Enjoy natural-looking, lifetime implants that behave like real teeth."
-image: "/treatments/dental-implant.jpg"
+image: "../../assets/treatments/dental-implant.jpg"
 summary: "The gold standard for replacing missing teeth. Experience permanent, durable, and natural-looking implants that restore your smile and bite."
 order: 1
 benefits:
@@ -24,7 +24,7 @@ relatedTreatments:
   - "smile-makeover"
 ---
 
-# Advanced Dental Implants at One Smile Dental Care
+## Advanced Dental Implants at One Smile Dental Care
 
 If you are suffering from missing teeth or loose dentures, **dental implants** offer the most advanced, natural-feeling, and permanent solution available. At One Smile Dental Care, we combine state-of-the-art 3D imaging with sterile clinical protocols to deliver implants that function and look exactly like your natural teeth.
 

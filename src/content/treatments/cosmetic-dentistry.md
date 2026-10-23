@@ -1,7 +1,7 @@
 ---
 title: "Cosmetic Dentistry"
 description: "Looking for a cosmetic dentist in Gomti Nagar, Lucknow? Explore bonding, veneers and teeth whitening at One Smile Dental Care and book a consultation."
-image: "/treatments/cosmetic-dentistry.jpg"
+image: "../../assets/treatments/cosmetic-dentistry.jpg"
 summary: "Enhance the aesthetic beauty of your smile. We correct chips, gaps, stains, and minor misalignments for a brilliant, natural-looking transformation."
 order: 9
 benefits:

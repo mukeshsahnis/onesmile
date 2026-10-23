@@ -2,8 +2,8 @@
 title: "Clear Aligners vs. Braces: Which is Right for You?"
 description: "Choosing between braces and clear aligners? Read our comprehensive comparison of cost, appearance, comfort, and treatment time to find your perfect fit."
 pubDate: 2026-06-18
-heroImage: "/blog/clear-aligners-vs-braces.jpg"
-author: "Dr. Radhika"
+heroImage: "../../assets/blog/clear-aligners-vs-braces.jpg"
+author: "Dr. Radhika Rastogi"
 category: "Orthodontics"
 tags:
   - "Clear Aligners"
@@ -14,7 +14,7 @@ relatedTreatments:
   - "cosmetic-dentistry"
 ---
 
-# Clear Aligners vs. Braces: Which is Right for You?
+## Clear Aligners vs. Braces: Which is Right for You?
 
 Having straight teeth is about more than just aesthetics; it is about establishing a balanced bite, making teeth easier to clean, and preventing future jaw issues. If you are planning to straighten your teeth, you have probably wondered: **Should I choose clear aligners or traditional braces?**
 

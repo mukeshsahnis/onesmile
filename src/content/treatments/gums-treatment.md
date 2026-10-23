@@ -1,7 +1,7 @@
 ---
 title: "Gum Disease Treatment (Periodontics)"
 description: "Stop bleeding gums, bad breath, and loose teeth with advanced gum treatment at One Smile Dental Care. Providing deep cleaning, scaling, and root planing."
-image: "/treatments/gum-treatment.jpg"
+image: "../../assets/treatments/gum-treatment.jpg"
 summary: "Treat bleeding gums, bad breath, and recession. Deep cleaning (scaling and root planing) restores health to the tissues that support your teeth."
 order: 6
 benefits:
@@ -23,7 +23,7 @@ relatedTreatments:
   - "extraction"
 ---
 
-# Gum Disease Treatment (Periodontal Care)
+## Gum Disease Treatment (Periodontal Care)
 
 Healthy gums are the foundation of a healthy smile. Gum disease, or periodontal disease, is an infection of the tissues that support your teeth. Because it is often painless in its early stages, many patients don't realize they have it.
 

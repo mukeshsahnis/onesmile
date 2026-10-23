@@ -1,7 +1,7 @@
 ---
 title: "Smile Makeover"
 description: "Explore smile makeover options in Gomti Nagar, Lucknow at One Smile Dental Care. Discuss veneers, crowns, implants and whitening in a personalised consultation."
-image: "/treatments/smile-makeover.jpg"
+image: "../../assets/treatments/smile-makeover.jpg"
 summary: "The ultimate transformation. A comprehensive, customized treatment plan combining cosmetic and restorative procedures to create your dream smile."
 order: 10
 benefits:

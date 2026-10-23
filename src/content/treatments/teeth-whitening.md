@@ -1,7 +1,7 @@
 ---
 title: "Professional Teeth Whitening"
 description: "Brighten your smile by up to 8 shades in a single session with safe, professional laser teeth whitening at One Smile Dental Care."
-image: "/treatments/teeth-whitening.jpg"
+image: "../../assets/treatments/teeth-whitening.jpg"
 summary: "Get a dramatically brighter smile safely and quickly. Our professional in-office laser whitening removes deep stains and discoloration."
 order: 13
 benefits:
@@ -24,7 +24,7 @@ relatedTreatments:
   - "smile-makeover"
 ---
 
-# Professional Teeth Whitening Treatments
+## Professional Teeth Whitening Treatments
 
 A bright, white smile is associated with youth, health, and vitality. Over time, factors like diet (coffee, tea, soda, wine), tobacco use, certain medications, and natural aging can cause teeth to lose their luster and become yellow or stained.
 

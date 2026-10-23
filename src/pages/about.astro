@@ -1,9 +1,16 @@
 ---
+import { Image } from 'astro:assets';
+import treatingPatientImage from '../assets/treatments/treating-patient.jpg';
+import docotRadhika2Image from '../assets/doctors/docot-radhika-2.jpg';
+import sterImage from '../assets/treatments/ster.jpg';
+import wtarepurifImage from '../assets/treatments/wtarepurif.webp';
+import xrayImage from '../assets/treatments/xray.jpg';
+import toolsImage from '../assets/treatments/tools.jpg';
 import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
-<Layout
+<Layout breadcrumbs={[{ name: "About Us", path: "/about/" }]}
   title="About Us | One Smile Dental Care"
   description="Learn about One Smile Dental Care, led by Dr. Radhika. Discover our philosophy, qualifications, and state-of-the-art dental technology."
 >
@@ -39,27 +46,27 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           </p>
         </div>
         <div class="rounded-2xl overflow-hidden aspect-video w-full shadow-lg border border-stone-200 bg-stone-100">
-          <img
-            src={`${base}treatments/treating-patient.jpg`}
+          <Image
+            src={treatingPatientImage}
             alt="Sterile dental care room showing patient treatment setup"
             class="w-full h-full object-cover"
-          />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
         </div>
       </div>
     </div>
   </section>
 
   {/* Dr Radhika Profile */}
-  <section class="py-20 bg-stone-100 border-t border-b border-stone-200">
+  <section id="dr-radhika-rastogi" class="py-20 bg-stone-100 border-t border-b border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-5 relative">
           <div class="aspect-[3/4] w-full rounded-2xl overflow-hidden bg-stone-200 shadow-xl relative">
-            <img
-              src={`${base}doctors/docot-radhika-2.jpg`}
+            <Image
+              src={docotRadhika2Image}
               alt="Dr. Radhika smiling"
               class="w-full h-full object-cover"
-            />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
             <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6 text-white z-10">
               <div class="text-lg font-bold">Dr. Radhika</div>
@@ -102,11 +109,11 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         {/* Tech item 1 */}
         <div class="flex flex-col sm:flex-row gap-6 bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
           <div class="w-full sm:w-36 aspect-video sm:aspect-square shrink-0 rounded-xl overflow-hidden bg-stone-100">
-            <img
-              src={`${base}treatments/ster.jpg`}
+            <Image
+              src={sterImage}
               alt="Medical autoclave sterilization machinery"
               class="w-full h-full object-cover"
-            />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
           </div>
           <div class="flex flex-col gap-2">
             <h3 class="text-lg font-bold text-stone-900">Autoclave Class-B Sterilization</h3>
@@ -119,11 +126,11 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         {/* Tech item 2 */}
         <div class="flex flex-col sm:flex-row gap-6 bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
           <div class="w-full sm:w-36 aspect-video sm:aspect-square shrink-0 rounded-xl overflow-hidden bg-stone-100">
-            <img
-              src={`${base}treatments/wtarepurif.webp`}
+            <Image
+              src={wtarepurifImage}
               alt="Water purification filters and tanks"
               class="w-full h-full object-cover"
-            />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
           </div>
           <div class="flex flex-col gap-2">
             <h3 class="text-lg font-bold text-stone-900">Pure Water Unit Integration</h3>
@@ -136,11 +143,11 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         {/* Tech item 3 */}
         <div class="flex flex-col sm:flex-row gap-6 bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
           <div class="w-full sm:w-36 aspect-video sm:aspect-square shrink-0 rounded-xl overflow-hidden bg-stone-100">
-            <img
-              src={`${base}treatments/xray.jpg`}
+            <Image
+              src={xrayImage}
               alt="Digital dental xray machine"
               class="w-full h-full object-cover"
-            />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
           </div>
           <div class="flex flex-col gap-2">
             <h3 class="text-lg font-bold text-stone-900">High-Precision Digital X-Rays</h3>
@@ -153,11 +160,11 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         {/* Tech item 4 */}
         <div class="flex flex-col sm:flex-row gap-6 bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
           <div class="w-full sm:w-36 aspect-video sm:aspect-square shrink-0 rounded-xl overflow-hidden bg-stone-100">
-            <img
-              src={`${base}treatments/tools.jpg`}
+            <Image
+              src={toolsImage}
               alt="Advanced dental surgical and examination tools"
               class="w-full h-full object-cover"
-            />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
           </div>
           <div class="flex flex-col gap-2">
             <h3 class="text-lg font-bold text-stone-900">Rotary Endodontic Systems</h3>

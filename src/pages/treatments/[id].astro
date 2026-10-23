@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, getEntry, render } from 'astro:content';
 
@@ -42,7 +44,7 @@ const faqSchema = {
 };
 ---
 
-<Layout
+<Layout breadcrumbs={[{ name: "Treatments", path: "/treatments/" }, { name: entry.data.title, path: `/treatments/${entry.id}/` }]}
   title={`${entry.data.title} in Gomti Nagar, Lucknow | One Smile Dental Care`}
   description={entry.data.description}
   image={entry.data.image}
@@ -85,11 +87,11 @@ const faqSchema = {
 
           {/* Main Visual Anchor */}
           <div class="aspect-video w-full rounded-2xl overflow-hidden bg-stone-200 shadow-lg border border-stone-200">
-            <img
-              src={entry.data.image.startsWith('/') ? `${base}${entry.data.image.slice(1)}` : entry.data.image}
-              alt={`Clinical details for ${entry.data.title}`}
+            <Image
+              src={entry.data.image}
+              alt={`Clinical details for ${entry.data.title}`} loading="eager"
               class="w-full h-full object-cover"
-            />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
           </div>
 
           {/* Markdown Content */}
@@ -186,11 +188,11 @@ const faqSchema = {
                 {relatedTreatments.map(relTreatment => (
                   <a href={`${base}treatments/${relTreatment.id}/`} class="group flex items-center gap-3 focus:outline-none">
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0">
-                      <img
-                        src={relTreatment.data.image.startsWith('/') ? `${base}${relTreatment.data.image.slice(1)}` : relTreatment.data.image}
-                        alt={relTreatment.data.title}
+                      <Image
+                        src={relTreatment.data.image}
+                        alt={relTreatment.data.title} sizes="48px"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+                       format="webp" widths={[160, 480, 960, 1440]} />
                     </div>
                     <div class="flex flex-col">
                       <h4 class="text-sm font-bold text-stone-900 group-hover:text-teal-600 transition-colors leading-tight">

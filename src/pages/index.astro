@@ -1,4 +1,18 @@
 ---
+import { Image } from 'astro:assets';
+import bannerImage from '../assets/banners/banner.jpg';
+import doctorRadhika1Image from '../assets/doctors/doctor-radhika-1.jpg';
+import doctorInterviewImage from '../assets/social/doctor-interview.webp';
+import patient1Image from '../assets/patients/patient1.jpg';
+import patient2Image from '../assets/patients/patient2.jpg';
+import patient3Image from '../assets/patients/patient3.jpg';
+import patient4Image from '../assets/patients/patient4.jpg';
+import patient5Image from '../assets/patients/patient5.jpg';
+import patient6Image from '../assets/patients/patient6.jpg';
+import patient7Image from '../assets/patients/patient7.jpg';
+import patient8Image from '../assets/patients/patient8.jpg';
+import patient9Image from '../assets/patients/patient9.jpg';
+import patient10Image from '../assets/patients/patient10.jpg';
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
@@ -15,17 +29,17 @@ const featuredTreatments = allTreatments
   .sort((a, b) => featuredTreatmentIds.indexOf(a.id) - featuredTreatmentIds.indexOf(b.id));
 
 const patientPhotos = [
-  "/patients/patient1.jpg",
-  "/patients/patient2.jpg",
-  "/patients/patient3.jpg",
-  "/patients/patient4.jpg",
-  "/patients/patient5.jpg",
-  "/patients/patient6.jpg",
-  "/patients/patient7.jpg",
-  "/patients/patient8.jpg",
-  "/patients/patient9.jpg",
-  "/patients/patient10.jpg",
-].map(path => `${base}${path.replace(/^\//, '')}`);
+  patient1Image,
+  patient2Image,
+  patient3Image,
+  patient4Image,
+  patient5Image,
+  patient6Image,
+  patient7Image,
+  patient8Image,
+  patient9Image,
+  patient10Image,
+];
 
 const googleReviews = [
   {
@@ -115,11 +129,12 @@ const googleReviews = [
   <section class="relative min-h-[90vh] flex items-end justify-center text-white overflow-hidden bg-stone-950 pb-6 sm:pb-10">
     {/* Full-bleed dominant background image */}
     <div class="absolute inset-0 z-0">
-      <img
-        src={`${base}banners/banner.jpg`}
+      <Image
+        src={bannerImage}
+        loading="eager" fetchpriority="high" sizes="100vw"
         alt="Smiling patient showing beautiful white teeth"
         class="w-full h-full object-cover object-center opacity-90 scale-105 animate-[zoomOut_20s_ease-out_forwards]"
-      />
+       format="webp" widths={[160, 480, 960, 1440]} />
       <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-900/20 to-transparent z-10"></div>
     </div>
 
@@ -200,12 +215,12 @@ const googleReviews = [
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         <div class="lg:col-span-5 relative">
           <div class="aspect-[3/4] w-full rounded-2xl overflow-hidden bg-stone-200 shadow-2xl relative">
-            <img
-              src={`${base}doctors/doctor-radhika-1.jpg`}
+            <Image
+              src={doctorRadhika1Image}
               alt="Dr. Radhika Rastogi, lead dentist at One Smile Dental Care"
               class="w-full h-full object-cover"
               loading="lazy"
-            />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
             <div class="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6 right-6 text-white z-10">
               <div class="text-xl font-bold">Dr. Radhika Rastogi</div>
@@ -224,7 +239,7 @@ const googleReviews = [
           <div class="max-w-md">
             <a href="https://www.instagram.com/onesmile_dentalcare/reel/DTfIbaBkTc7/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-white border border-stone-200 rounded-2xl p-3 hover:border-teal-400 hover:shadow-md transition-all">
               <div class="relative w-20 h-20 rounded-xl overflow-hidden bg-stone-200 shrink-0">
-                <img src={`${base}social/doctor-interview.webp`} alt="Dr. Radhika Rastogi discussing her approach to patient care" class="w-full h-full object-cover" loading="lazy" />
+                <Image src={doctorInterviewImage} alt="Dr. Radhika Rastogi discussing her approach to patient care" class="w-full h-full object-cover" loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
                 <span class="absolute inset-0 bg-stone-950/20 flex items-center justify-center" aria-hidden="true">
                   <span class="w-8 h-8 rounded-full bg-white/95 text-teal-700 flex items-center justify-center shadow"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-0.5 fill-current" viewBox="0 0 20 20"><path d="M6.5 5.5a1 1 0 011.54-.84l7 4.5a1 1 0 010 1.68l-7 4.5A1 1 0 016.5 14.5v-9z"/></svg></span>
                 </span>
@@ -261,12 +276,12 @@ const googleReviews = [
         {featuredTreatments.map(treatment => (
           <a href={`${base}treatments/${treatment.id}/`} class="group overflow-hidden bg-white rounded-2xl border border-stone-200 hover:shadow-xl hover:border-teal-500/30 transition-all duration-300">
             <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
-              <img
-                src={treatment.data.image.startsWith('/') ? `${base}${treatment.data.image.slice(1)}` : treatment.data.image}
-                alt={treatment.data.title}
+              <Image
+                src={treatment.data.image}
+                alt={treatment.data.title} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
-              />
+               format="webp" widths={[160, 480, 960, 1440]} />
             </div>
             <div class="p-5">
               <h3 class="text-lg font-bold text-stone-900 group-hover:text-teal-600 transition-colors">{treatment.data.title}</h3>
@@ -313,12 +328,12 @@ const googleReviews = [
           {patientPhotos.map((photo, idx) => (
             <div id={`slide-${idx}`} class="carousel-item w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] flex flex-col bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
               <div class="aspect-[4/3] w-full overflow-hidden bg-stone-100">
-                <img
+                <Image
                   src={photo}
                   alt={`One Smile patient transformation ${idx + 1}`}
                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   loading="lazy"
-                />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
               </div>
               <div class="p-4 bg-white border-t border-stone-100 flex items-center justify-between">
                 <span class="text-sm font-bold text-stone-800">Smile Transformation {idx + 1}</span>
@@ -393,7 +408,7 @@ const googleReviews = [
                           alt={review.name}
                           class="w-full h-full object-cover"
                           loading="lazy"
-                          referrerpolicy="no-referrer"
+                          referrerpolicy="no-referrer" width={40} height={40}
                         />
                       </div>
                     ) : (

@@ -2,8 +2,8 @@
 title: "5 Warning Signs You Need Your Wisdom Teeth Removed"
 description: "Are your wisdom teeth causing problems? Read our guide on the top 5 warning signs that you need your wisdom teeth extracted before they damage your smile."
 pubDate: 2026-06-25
-heroImage: "/blog/wisdom-teeth-signs.jpg"
-author: "Dr. Radhika"
+heroImage: "../../assets/blog/wisdom-teeth-signs.jpg"
+author: "Dr. Radhika Rastogi"
 category: "Oral Surgery"
 tags:
   - "Wisdom Teeth"
@@ -14,7 +14,7 @@ relatedTreatments:
   - "root-canal-treatment"
 ---
 
-# 5 Warning Signs You Need Your Wisdom Teeth Removed
+## 5 Warning Signs You Need Your Wisdom Teeth Removed
 
 Wisdom teeth, also known as third molars, are the last set of teeth to erupt, typically appearing between the ages of 17 and 25. While some people's wisdom teeth grow in perfectly aligned and healthy, for many others, there isn't enough room in the jaw. This lack of space causes wisdom teeth to become **impacted** (trapped under the gums or bone) or erupt at crooked angles.
 

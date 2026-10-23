@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 import Layout from '../../layouts/Layout.astro';
 import { getCollection, getEntry, render } from 'astro:content';
 
@@ -28,13 +30,14 @@ const blogSchema = {
   "@type": "BlogPosting",
   "headline": entry.data.title,
   "description": entry.data.description,
-  "image": entry.data.heroImage ? new URL(entry.data.heroImage, Astro.url.origin).toString() : undefined,
+  "image": entry.data.heroImage ? new URL(entry.data.heroImage.src, Astro.site).toString() : undefined,
   "datePublished": entry.data.pubDate.toISOString(),
   "dateModified": entry.data.updatedDate ? entry.data.updatedDate.toISOString() : entry.data.pubDate.toISOString(),
   "author": {
     "@type": "Person",
     "name": entry.data.author,
-    "jobTitle": "Dentist"
+    "jobTitle": "Dentist",
+    "url": new URL("/about/#dr-radhika-rastogi", Astro.site).href
   },
   "publisher": {
     "@type": "Organization",
@@ -65,7 +68,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 } : null;
 ---
 
-<Layout
+<Layout breadcrumbs={[{ name: "Blog", path: "/blog/" }, { name: entry.data.title, path: `/blog/${entry.id}/` }]}
   title={`${entry.data.title} | One Smile Dental Care Blog`}
   description={entry.data.description}
   image={entry.data.heroImage}
@@ -96,7 +99,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
         </ol>
         <h1 class="text-3xl font-extrabold text-stone-900 mt-2 leading-tight">{entry.data.title}</h1>
         <div class="flex items-center gap-4 text-xs text-stone-500 mt-1">
-          <span>By <strong class="text-stone-700">{entry.data.author}</strong></span>
+          <span>By <a href={`${base}about/#dr-radhika-rastogi`} class="text-stone-700 font-bold underline">{entry.data.author}</a></span>
           <span>•</span>
           <span>{new Date(entry.data.pubDate).toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'})}</span>
           <span>•</span>
@@ -114,11 +117,11 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
           {/* Main Visual Anchor */}
           {entry.data.heroImage && (
             <div class="aspect-video w-full rounded-2xl overflow-hidden bg-stone-200 shadow-md border border-stone-200">
-              <img
-                src={entry.data.heroImage.startsWith('/') ? `${base}${entry.data.heroImage.slice(1)}` : entry.data.heroImage}
-                alt={entry.data.title}
+              <Image
+                src={entry.data.heroImage}
+                alt={entry.data.title} loading="eager"
                 class="w-full h-full object-cover"
-              />
+ sizes="(max-width: 768px) 100vw, 50vw" format="webp" widths={[160, 480, 960, 1440]} />
             </div>
           )}
 
@@ -171,11 +174,11 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
                 {relatedTreatments.map(relTreatment => (
                   <a href={`${base}treatments/${relTreatment.id}/`} class="group flex items-center gap-3 focus:outline-none">
                     <div class="w-12 h-12 rounded-lg overflow-hidden bg-stone-100 shrink-0">
-                      <img
-                        src={relTreatment.data.image.startsWith('/') ? `${base}${relTreatment.data.image.slice(1)}` : relTreatment.data.image}
-                        alt={relTreatment.data.title}
+                      <Image
+                        src={relTreatment.data.image}
+                        alt={relTreatment.data.title} sizes="48px"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
+                       format="webp" widths={[160, 480, 960, 1440]} />
                     </div>
                     <div class="flex flex-col">
                       <h4 class="text-sm font-bold text-stone-900 group-hover:text-teal-600 transition-colors leading-tight">
