@@ -13,7 +13,7 @@ const {
   title = "Dentist in Gomti Nagar, Lucknow | One Smile Dental Care",
   description = "One Smile Dental Care is a specialist-led dental clinic in Gomti Nagar, Lucknow. Dental implants, painless root canal treatment, braces & aligners, smile makeovers and kids dentistry by Dr. Radhika Rastogi.",
   image = "/treatments/treating-patient.jpg",
-  canonicalURL = Astro.url.href,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;

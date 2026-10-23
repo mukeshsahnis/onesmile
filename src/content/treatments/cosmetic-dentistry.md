@@ -1,6 +1,6 @@
 ---
 title: "Cosmetic Dentistry"
-description: "Transform your smile with premium cosmetic dentistry treatments at One Smile Dental Care. Providing composite bonding, teeth whitening, veneers, and re-contouring."
+description: "Looking for a cosmetic dentist in Gomti Nagar, Lucknow? Explore bonding, veneers and teeth whitening at One Smile Dental Care and book a consultation."
 image: "/treatments/cosmetic-dentistry.jpg"
 summary: "Enhance the aesthetic beauty of your smile. We correct chips, gaps, stains, and minor misalignments for a brilliant, natural-looking transformation."
 order: 9
@@ -24,11 +24,13 @@ relatedTreatments:
   - "teeth-whitening"
 ---
 
-# Cosmetic Dentistry at One Smile Dental Care
+## Cosmetic Dentistry in Gomti Nagar, Lucknow
 
 Your smile is one of your most powerful features. If you feel self-conscious about chipped, stained, spaced, or slightly crooked teeth, **cosmetic dentistry** can help you achieve the dazzling, symmetrical smile you have always desired.
 
 At One Smile Dental Care, we believe that cosmetic dentistry is a blend of dental science and artistic design. We customize every treatment to match your facial shape, skin tone, and individual style, ensuring results that look stunning yet completely natural.
+
+Our clinic is at 5/437, near Dayal Paradise, Vikas Khand, Gomti Nagar, Lucknow. Read about [our dentist and clinic](/about/), compare [veneers](/treatments/veneers/) and [teeth whitening](/treatments/teeth-whitening/), or explore a coordinated [smile makeover](/treatments/smile-makeover/). [Contact us](/contact/) to discuss which options suit your goals.
 
 ## Our Core Cosmetic Treatments:
 

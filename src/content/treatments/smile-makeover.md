@@ -1,6 +1,6 @@
 ---
 title: "Smile Makeover"
-description: "Achieve the ultimate aesthetic smile with a custom Smile Makeover at One Smile Dental Care. A tailored combination of veneers, crowns, implants, and whitening."
+description: "Explore smile makeover options in Gomti Nagar, Lucknow at One Smile Dental Care. Discuss veneers, crowns, implants and whitening in a personalised consultation."
 image: "/treatments/smile-makeover.jpg"
 summary: "The ultimate transformation. A comprehensive, customized treatment plan combining cosmetic and restorative procedures to create your dream smile."
 order: 10
@@ -25,11 +25,13 @@ relatedTreatments:
   - "dental-implant"
 ---
 
-# Complete Smile Makeovers
+## Complete Smile Makeovers in Gomti Nagar, Lucknow
 
 A **Smile Makeover** is the ultimate dental transformation. Rather than treating a single tooth in isolation, a smile makeover views your teeth, gums, and face as a single canvas. We design a comprehensive plan that rejuvenates the aesthetics, alignment, and function of your teeth.
 
 At One Smile Dental Care, we map out your transformation using state-of-the-art diagnostic tools, allowing you to collaborate on the shape, shade, and overall look of your new smile.
+
+Visit our clinic at 5/437, near Dayal Paradise, Vikas Khand, Gomti Nagar, Lucknow to discuss your goals. Learn more about [our dentist and clinic](/about/) or [contact us to arrange a consultation](/contact/). You can also explore individual options such as [veneers](/treatments/veneers/), [teeth whitening](/treatments/teeth-whitening/) and [dental implants](/treatments/dental-implant/).
 
 ## How a Smile Makeover Can Help:
 

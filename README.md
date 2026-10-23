@@ -82,6 +82,31 @@ Represents article guides written by clinical authors.
 ---
 
 
+## SEO redirects and validation
+
+Legacy URLs and their equivalent current pages are mapped in
+`src/legacy-redirects.mjs`. GitHub Pages serves static files, so Astro generates
+zero-second HTML refresh redirects with destination canonical links, not HTTP
+301 responses. Keep these files available for existing links and bookmarks.
+Pages with no equivalent replacement (for example, removed account pages or
+articles) should remain 404s rather than redirecting to unrelated content.
+
+`npm run build` also runs `npm run check:seo`. This checks the generated
+redirects, destination pages, canonical URLs, sitemap exclusions and internal
+page links. Run it before deployment; `dist/` must exist when running the check
+on its own.
+
+The GitHub Pages workflow deploys pushes to `main`. After deployment:
+
+1. Verify the old treatment URLs open their matching `/treatments/` pages.
+2. Use Search Console URL Inspection on the final gum-treatment and
+   crowns-and-bridges URLs, including a live test. Request indexing if appropriate.
+3. Confirm important current URLs are indexed; the sitemap should contain the
+   24 current pages, without legacy aliases.
+4. Expect old aliases to be reported as redirects or excluded pages after
+   recrawling. A zero-exclusion count is not the goal. Do not validate the entire
+   404 group as fixed while intentionally removed URLs still return 404.
+
 ## 📄 License
 
 This project is proprietary and built specifically for One Smile Dental Care. All assets, images, and content rights are reserved.
