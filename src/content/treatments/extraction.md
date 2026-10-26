@@ -1,5 +1,6 @@
 ---
 title: "Gentle Tooth Extractions"
+seoTitle: "Tooth Extraction in Gomti Nagar, Lucknow | One Smile"
 description: "Experience safe, pain-free tooth extractions and wisdom teeth removal at One Smile Dental Care. Providing maximum comfort and careful post-op guidance."
 image: "../../assets/treatments/tooth-extraction.jpg"
 summary: "Safe removal of severely damaged, decayed, or crowded teeth, including wisdom teeth. We prioritize your comfort and quick healing."
@@ -21,6 +22,7 @@ treatmentTime: "30 to 60 minutes"
 relatedTreatments:
   - "dental-implant"
   - "crown-and-bridges"
+  - "maxillofacial-trauma"
 ---
 
 ## Safe & Gentle Tooth Extractions

@@ -45,7 +45,7 @@ const faqSchema = {
 ---
 
 <Layout breadcrumbs={[{ name: "Treatments", path: "/treatments/" }, { name: entry.data.title, path: `/treatments/${entry.id}/` }]}
-  title={`${entry.data.title} in Gomti Nagar, Lucknow | One Smile Dental Care`}
+  title={entry.data.seoTitle || `${entry.data.title} | One Smile Dental Care`}
   description={entry.data.description}
   image={entry.data.image}
 >

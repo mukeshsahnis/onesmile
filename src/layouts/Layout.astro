@@ -15,7 +15,7 @@ interface Props {
 
 const {
   title = "Dentist in Gomti Nagar, Lucknow | One Smile Dental Care",
-  description = "One Smile Dental Care is a specialist-led dental clinic in Gomti Nagar, Lucknow. Dental implants, painless root canal treatment, braces & aligners, smile makeovers and kids dentistry by Dr. Radhika Rastogi.",
+  description = "Visit One Smile Dental Care in Gomti Nagar, Lucknow for dental implants, root canals, braces and family dentistry. Book a consultation with our team.",
   image = "/treatments/treating-patient.jpg",
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   breadcrumbs = [],
@@ -44,13 +44,13 @@ const phone2 = "+91-6394763460";
 const email = "onesmiledentalcare@gmail.com";
 const addressLink = "https://www.google.com/maps?cid=11247058903890459605&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=US&source=embed";
 const whatsappNo = "+918400021200";
-const facebookLink = "https://www.facebook.com/profile.php?id=100069537376974";
+const facebookLink = "https://www.facebook.com/One-Smile-Dental-Care-110064694639642/";
 const instagramLink = "https://www.instagram.com/onesmile_dentalcare/";
 
 // Dentist / LocalBusiness Schema for local SEO, emitted on every page
 const dentistSchema = {
   "@context": "https://schema.org",
-  "@type": "Dentist",
+  "@type": ["Dentist", "Organization"],
   "@id": "https://onesmiledentalcare.com/#dentist",
   "name": "One Smile Dental Care",
   "description": "Dentist and dental clinic in Gomti Nagar, Lucknow led by Dr. Radhika Rastogi (MDS, Endodontics & Aesthetic Dentistry).",

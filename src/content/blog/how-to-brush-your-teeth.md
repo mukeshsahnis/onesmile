@@ -1,5 +1,6 @@
 ---
 title: "How to Brush Your Teeth Properly: Step-by-Step Guide & Expert Tips"
+seoTitle: "How to Brush Your Teeth Properly | One Smile Dental Care"
 description: "Master the correct brushing technique to protect your teeth and gums. Learn step-by-step methods, common mistakes to avoid, and answers to top dental FAQs."
 pubDate: 2026-07-21
 heroImage: "../../assets/treatments/treating-patient.jpg"

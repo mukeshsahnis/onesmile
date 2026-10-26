@@ -1,5 +1,6 @@
 ---
 title: "Root Canal Treatment"
+seoTitle: "Root Canal Treatment in Gomti Nagar, Lucknow | One Smile"
 description: "Save your infected teeth with pain-free, single-sitting Root Canal Treatment (RCT) at One Smile Dental Care. Stop toothaches and preserve your natural smile."
 image: "../../assets/treatments/clinical-treatment.jpg"
 summary: "Save a severely decayed or infected tooth from extraction. Our modern, pain-free root canal treatment eliminates pain and repairs your natural tooth."

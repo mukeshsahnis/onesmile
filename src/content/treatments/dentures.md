@@ -1,6 +1,7 @@
 ---
 title: "Complete & Partial Dentures"
-description: "Restore your bite and confidence with custom-crafted, comfortable complete and partial dentures at One Smile Dental Care. Learn about implant-supported dentures."
+seoTitle: "Dentures in Gomti Nagar, Lucknow | One Smile"
+description: "Explore complete, partial and implant-supported dentures at One Smile Dental Care in Gomti Nagar, Lucknow. Book a consultation with our team."
 image: "../../assets/treatments/dentures.jpg"
 summary: "Replace multiple or all missing teeth. Choose from lightweight, flexible partial dentures or secure, implant-supported complete dentures."
 order: 12

@@ -1,6 +1,7 @@
 ---
 title: "Maxillofacial Trauma & Fractures"
-description: "Receive emergency surgical care for facial trauma, jaw fractures, and dental lacerations at One Smile Dental Care. Managed by experienced maxillofacial surgeons."
+seoTitle: "Maxillofacial Trauma Care in Lucknow | One Smile"
+description: "Consult One Smile Dental Care in Gomti Nagar, Lucknow about facial injuries, jaw fractures and maxillofacial treatment options."
 image: "../../assets/treatments/maxillofacial-trauma.jpg"
 summary: "Specialized emergency care for facial injuries, jaw fractures, and severe dental trauma, restoring facial structure and function."
 order: 11

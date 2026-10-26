@@ -1,6 +1,7 @@
 ---
 title: "Pediatric Dentistry (Kids Care)"
-description: "Introduce your children to stress-free, friendly pediatric dentistry at One Smile Dental Care. Providing dental sealants, fluoride therapy, and early orthodontic evaluations."
+seoTitle: "Kids Dentistry in Gomti Nagar, Lucknow | One Smile"
+description: "Dental care for children in Gomti Nagar, Lucknow. Visit One Smile Dental Care for check-ups, sealants, fluoride therapy and orthodontic evaluations."
 image: "../../assets/treatments/pediatric-dentistry.jpg"
 summary: "Help your child build healthy dental habits for life. Our kid-friendly environment ensures stress-free cavity prevention, sealants, and gentle care."
 order: 5

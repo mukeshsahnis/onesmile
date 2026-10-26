@@ -1,6 +1,7 @@
 ---
 title: "Advanced Dental Implants"
-description: "Restore your missing teeth with premium, permanent dental implants at One Smile Dental Care. Enjoy natural-looking, lifetime implants that behave like real teeth."
+seoTitle: "Dental Implants in Gomti Nagar, Lucknow | One Smile"
+description: "Explore dental implants for missing teeth at One Smile Dental Care in Gomti Nagar, Lucknow. Book a consultation to discuss your treatment options."
 image: "../../assets/treatments/dental-implant.jpg"
 summary: "The gold standard for replacing missing teeth. Experience permanent, durable, and natural-looking implants that restore your smile and bite."
 order: 1

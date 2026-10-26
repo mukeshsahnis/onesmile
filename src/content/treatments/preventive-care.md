@@ -1,5 +1,6 @@
 ---
 title: "Preventive Care & Cleanings"
+seoTitle: "Dental Check-ups & Cleaning in Gomti Nagar | One Smile"
 description: "Keep your teeth healthy and bright with preventive care, routine checkups, and deep scaling at One Smile Dental Care. Stop dental issues before they start."
 image: "../../assets/treatments/preventive-care.jpg"
 summary: "Prevent gum disease, cavities, and bad breath. Routine cleanings, scaling, and comprehensive exams are the foundation of lifetime oral health."

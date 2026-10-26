@@ -1,5 +1,6 @@
 ---
 title: "Braces & Clear Aligners"
+seoTitle: "Braces & Aligners in Gomti Nagar, Lucknow | One Smile"
 description: "Straighten your teeth and correct your bite with custom orthodontic treatments, including clear aligners and ceramic braces, at One Smile Dental Care."
 image: "../../assets/treatments/xray.jpg"
 summary: "Get the straight smile you have always wanted. Choose from virtually invisible clear aligners, aesthetic ceramic braces, or traditional metal braces."

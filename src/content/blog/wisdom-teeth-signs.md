@@ -1,5 +1,6 @@
 ---
 title: "5 Warning Signs You Need Your Wisdom Teeth Removed"
+seoTitle: "5 Signs Your Wisdom Teeth Need Attention | One Smile"
 description: "Are your wisdom teeth causing problems? Read our guide on the top 5 warning signs that you need your wisdom teeth extracted before they damage your smile."
 pubDate: 2026-06-25
 heroImage: "../../assets/blog/wisdom-teeth-signs.jpg"

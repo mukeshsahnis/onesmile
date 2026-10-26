@@ -1,5 +1,6 @@
 ---
 title: "Gum Disease Treatment (Periodontics)"
+seoTitle: "Gum Treatment in Gomti Nagar, Lucknow | One Smile"
 description: "Stop bleeding gums, bad breath, and loose teeth with advanced gum treatment at One Smile Dental Care. Providing deep cleaning, scaling, and root planing."
 image: "../../assets/treatments/gum-treatment.jpg"
 summary: "Treat bleeding gums, bad breath, and recession. Deep cleaning (scaling and root planing) restores health to the tissues that support your teeth."

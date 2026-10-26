@@ -1,5 +1,6 @@
 ---
 title: "Porcelain & Composite Veneers"
+seoTitle: "Dental Veneers in Gomti Nagar, Lucknow | One Smile"
 description: "Get a flawless, Hollywood smile with custom porcelain and composite veneers at One Smile Dental Care. Correct chips, gaps, and severe stains."
 image: "../../assets/treatments/veneers.jpg"
 summary: "Wafer-thin, custom-made shells bonded to the front of your teeth. Correct chips, gaps, alignment issues, and severe discoloration for a perfect smile."

@@ -1,5 +1,6 @@
 ---
 title: "Clear Aligners vs. Braces: Which is Right for You?"
+seoTitle: "Clear Aligners vs. Braces | One Smile Dental Care"
 description: "Choosing between braces and clear aligners? Read our comprehensive comparison of cost, appearance, comfort, and treatment time to find your perfect fit."
 pubDate: 2026-06-18
 heroImage: "../../assets/blog/clear-aligners-vs-braces.jpg"

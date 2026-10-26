@@ -69,7 +69,7 @@ const faqSchema = entry.data.faqs && entry.data.faqs.length > 0 ? {
 ---
 
 <Layout breadcrumbs={[{ name: "Blog", path: "/blog/" }, { name: entry.data.title, path: `/blog/${entry.id}/` }]}
-  title={`${entry.data.title} | One Smile Dental Care Blog`}
+  title={entry.data.seoTitle || `${entry.data.title} | One Smile Dental Care`}
   description={entry.data.description}
   image={entry.data.heroImage}
 >

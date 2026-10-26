@@ -1,5 +1,6 @@
 ---
 title: "Dental Crowns & Bridges"
+seoTitle: "Crowns & Bridges in Gomti Nagar, Lucknow | One Smile"
 description: "Restore damaged or missing teeth with custom-crafted dental crowns and bridges at One Smile Dental Care. Made from premium, long-lasting porcelain and ceramic."
 image: "../../assets/treatments/crown-and-bridges.jpg"
 summary: "Protect cracked teeth and fill gaps in your smile. Our custom-designed crowns and bridges restore shape, size, and strength to your teeth."
