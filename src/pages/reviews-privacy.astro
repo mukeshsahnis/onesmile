@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Reviews App Privacy Policy | One Smile Dental Care"
+  description="How One Smile Website Reviews accesses, uses and stores Google Business Profile data."
+  breadcrumbs={[{ name: 'Reviews privacy', path: '/reviews-privacy/' }]}>
+  <main class="max-w-3xl mx-auto px-6 py-16 text-stone-700 leading-relaxed space-y-6">
+    <h1 class="text-3xl font-bold text-stone-900">Reviews app privacy policy</h1>
+    <p>Last updated: 31 October 2026</p>
+    <p>One Smile Website Reviews is operated by One Smile Dental Care. It is an owner-authorized integration for displaying recent Google reviews of our clinic on this website. This policy covers that integration; it does not describe clinical records or appointment handling. Visitors do not need to sign in with Google.</p>
+    <h2 class="text-xl font-semibold text-stone-900">Data accessed and displayed</h2>
+    <p>With the clinic account's authorization, the app reads account and business-location identifiers to identify our clinic, and review data including reviewer display names, profile photos where available, ratings, comments and posting dates. It also reads the clinic's average rating and total review count. The website displays up to 10 most recently posted reviews, including low ratings and reviews without written comments.</p>
+    <p>Google's Business Profile authorization scope permits management of business listings. Our integration uses that authorization only to read the information described here. It does not edit business listings, post replies, access Gmail or access patient records.</p>
+    <h2 class="text-xl font-semibold text-stone-900">Use, sharing and security</h2>
+    <p>Review information is used to display patient feedback on our public website. Google provides the source data; GitHub Actions processes it during website builds, and GitHub Pages hosts the resulting public pages. Reviewer photos are loaded from Google when shown. The app does not sell Google user data or use it for advertising, profiling or AI model training.</p>
+    <p>OAuth credentials are kept in protected local configuration during setup and encrypted GitHub Actions secrets for scheduled builds. They are not included in public website files or committed to source control. Access is limited to the clinic's authorized operators and the build service.</p>
+    <h2 class="text-xl font-semibold text-stone-900">Retention and removal</h2>
+    <p>The integration is designed to refresh daily. Public review content is temporary and must be refreshed or removed within 30 days. Raw API responses and owner replies are not published or kept as a review archive. If a review fetch fails, the next successful website build displays a link to Google instead of a stale review carousel.</p>
+    <p>The clinic can revoke authorization in its <a class="text-teal-700 underline" href="https://myaccount.google.com/connections">Google Account connections</a> and disable the integration. Revoking access stops future fetching; the clinic must also rebuild the website to remove previously displayed reviews and remove stored credentials when they are no longer needed.</p>
+    <p>For questions or requests to remove a review's display from this website, contact <a class="text-teal-700 underline" href="mailto:onesmiledentalcare@gmail.com">onesmiledentalcare@gmail.com</a>. Changes to an original review on Google must be made through Google. We will update this page if the integration's data practices change.</p>
+    <p><a class="text-teal-700 underline" href="/reviews-terms/">Reviews app terms</a></p>
+  </main>
+</Layout>
