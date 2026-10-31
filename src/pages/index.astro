@@ -300,7 +300,6 @@ const googleReviews = googleReviewData?.reviews ?? [];
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-xs font-bold uppercase tracking-widest text-teal-600">Patient experiences</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-900 mt-3">What our patients say.</h2>
-        <p class="text-lg text-stone-600 mt-4">{googleReviews.length ? `Our ${googleReviews.length} most recent Google reviews, newest first.` : "Read patient experiences on our Google Business Profile."}</p>
       </div>
 
       {googleReviews.length > 0 && <div class="relative w-full">
@@ -386,9 +385,6 @@ const googleReviews = googleReviewData?.reviews ?? [];
         <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" class="font-semibold text-teal-700 underline">
           Read all reviews on Google
         </a>
-        {googleReviewData && <span class="block text-sm text-stone-500 mt-2">
-          {googleReviewData.totalReviewCount} reviews · Updated {new Intl.DateTimeFormat('en-IN', { dateStyle: 'medium', timeZone: 'Asia/Kolkata' }).format(new Date(googleReviewData.fetchedAt))}
-        </span>}
       </p>
     </div>
 
