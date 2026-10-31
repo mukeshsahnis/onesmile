@@ -147,3 +147,10 @@ content and any costs, qualifications or review dates. Do not label unreviewed
 content as clinically reviewed. Conversion tracking still requires choosing
 and configuring the destination analytics/conversion actions; button clicks
 must not be reported as completed appointments.
+
+## Automatic Google reviews
+
+The homepage supports the 10 newest reviews through the Google Business Profile
+API. See [setup and operation](docs/google-reviews.md). The integration stays
+disabled until Google API access, OAuth secrets and the GitHub repository variable
+are configured. No credentials or review snapshots are committed.
