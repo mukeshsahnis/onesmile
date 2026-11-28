@@ -154,3 +154,32 @@ The homepage supports the 10 newest reviews through the Google Business Profile
 API. See [setup and operation](docs/google-reviews.md). The integration stays
 disabled until Google API access, OAuth secrets and the GitHub repository variable
 are configured. No credentials or review snapshots are committed.
+
+
+## Font and logo performance
+
+Outfit and Plus Jakarta Sans are self-hosted using the licensed
+`@fontsource-variable` packages. Their CSS is bundled into the site stylesheet;
+WOFF2 files are emitted as fingerprinted `/_astro/` assets. `font-display: swap`
+keeps fallback text visible while fonts load, and unicode ranges limit downloads
+to the subsets a page uses. The font licenses are included in `public/fonts/`.
+Do not reintroduce the external Google Fonts stylesheet.
+
+Header and footer logos render at approximately 98 × 48 CSS pixels. Their `sizes`
+and 100/200/300/400px image candidates match that display size and common device
+pixel ratios. Update both if the logo's rendered size changes.
+
+### Cache headers: hosting follow-up
+
+The current GitHub Pages deployment serves `/_astro/` files with
+`Cache-Control: max-age=600`. These are HTTP response headers, not HTML settings;
+adding a Netlify-style `_headers` file or a meta tag will not configure them here.
+No hosting or DNS changes are included in the font/logo optimization.
+
+If a CDN or hosting provider with configurable headers is introduced, set a long
+browser cache lifetime for fingerprinted `/_astro/` assets, for example:
+`Cache-Control: public, max-age=31536000, immutable`. Keep HTML, robots.txt,
+sitemaps, and mutable public assets out of that immutable rule. Verify the actual
+response headers after deployment. Do not delay the local font/logo fixes for a
+hosting migration, and do not disable Google Ads or Ahrefs merely to improve a
+Lighthouse score.

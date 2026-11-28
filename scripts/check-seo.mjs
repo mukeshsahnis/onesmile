@@ -22,6 +22,11 @@ for (const url of pages) {
   assert.equal(parsed.origin, site, `${url}: incorrect origin`);
   assert.ok(parsed.pathname.endsWith('/'), `${url}: missing trailing slash`);
   const html = await readPage(parsed.pathname);
+  assert.ok(!/fonts\.(?:googleapis|gstatic)\.com/.test(html), `${url}: external Google Fonts dependency returned`);
+  for (const [logo] of html.matchAll(/<img\b[^>]*alt="One Smile Dental Care(?: Logo)?"[^>]*>/g)) {
+    assert.match(logo, /sizes="98px"/, `${url}: logo sizes must match its 48px-high display size`);
+    assert.match(logo, /srcset="[^"]* 200w/, `${url}: missing appropriately sized logo candidate`);
+  }
   assert.ok(html.includes(`rel="canonical" href="${url}"`), `${url}: incorrect canonical`);
   assert.ok(!/<meta[^>]+content="[^"]*noindex/i.test(html), `${url}: sitemap page is noindex`);
   assert.ok(!/http-equiv="refresh"/i.test(html), `${url}: sitemap page redirects`);
@@ -63,6 +68,20 @@ for (const file of await readdir(new URL('../src/assets/', import.meta.url), { r
   const original = await readFile(new URL(`../src/assets/${file}`, import.meta.url));
   const publicCopy = await readFile(new URL(`../dist/${file}`, import.meta.url));
   assert.ok(original.equals(publicCopy), `${file}: legacy public image changed or disappeared`);
+}
+
+// Fonts must be emitted locally; no external stylesheet is needed at runtime.
+const assetDirectory = new URL('../dist/_astro/', import.meta.url);
+const assetFiles = await readdir(assetDirectory);
+const styles = (await Promise.all(assetFiles.filter(file => file.endsWith('.css'))
+  .map(file => readFile(new URL(file, assetDirectory), 'utf8')))).join('\n');
+for (const family of ['Outfit Variable', 'Plus Jakarta Sans Variable']) {
+  assert.ok(styles.includes(family), `Missing self-hosted font family: ${family}`);
+}
+const fonts = [...styles.matchAll(/url\(["']?(\/_astro\/[^)"']+\.woff2)["']?\)/g)];
+assert.ok(fonts.length >= 2, 'Expected local WOFF2 font references');
+for (const [, font] of fonts) {
+  await stat(new URL(`../dist${font}`, import.meta.url));
 }
 
 console.log(`SEO checks passed: ${Object.keys(legacyRedirects).length} redirects and ${pages.length} canonical pages.`);
